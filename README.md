@@ -67,7 +67,15 @@ npm test
 
 GitHub Pages 项目地址：`https://choosemiracle.github.io/ways.home/`
 
-本项目为直接提交生成页面的静态站。发布源应为 `main` 分支的根目录；`.nojekyll` 用来跳过 Jekyll 处理。同步代码与启用 Pages 是两件不同的事，部署后的状态以公开地址实际返回为准。旧 `gh-pages` 分支不由本构建流程维护。
+本项目为直接提交生成页面的静态站。已从 GitHub 的 Pages 部署记录确认，当前公开网站使用 `gh-pages` 分支；开发主分支为 `main`。保留这个现有设置，不另改仓库管理权限。`.nojekyll` 用来跳过 Jekyll 处理。
+
+完成构建、测试与提交后，使用下面的正常快进推送同步两个分支；不要使用 `--force`。如果发布分支有独立改动，应先获取并协调这些改动。
+
+```sh
+git push origin main main:gh-pages
+```
+
+仅推送 `main` 不会更新当前公开网站。每次发布后，都应检查 GitHub Pages 部署结果、首页和新增专题地址，而不是仅确认 Git 推送成功。
 
 ## 隐私与实践
 
