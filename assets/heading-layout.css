@@ -1,0 +1,53 @@
+/* Chinese heading composition: clauses first, protected phrases second.
+   Source of the boundaries: content/heading-breaks.txt. No text is truncated. */
+h1, h2, h3 { overflow-wrap: normal; word-break: normal; line-break: strict; text-wrap: balance; }
+.title-flow { overflow-wrap: normal; word-break: normal; line-break: strict; text-wrap: balance; }
+.title-flow .title-clause { display: inline-block; max-inline-size: 100%; vertical-align: top; text-wrap: balance; }
+.title-flow .title-unit { display: inline; white-space: nowrap; color: inherit; }
+.title-flow .title-unit--fluid { white-space: normal; overflow-wrap: break-word; }
+/* Major page headings follow editorial punctuation, not arbitrary column ends. */
+.page-hero { grid-template-columns: minmax(0,1fr) clamp(70px,8vw,126px); gap: clamp(24px,4vw,56px); padding-block: 42px 48px; margin-bottom: 44px; }
+.page-hero > div:first-child { min-width: 0; }
+.page-hero h1.title-flow { max-width: none; font-size: clamp(32px,3.6vw,50px); line-height: 1.5; letter-spacing: 0; margin-block: 14px 25px; }
+.page-hero h1.title--medium { font-size: clamp(30px,3.3vw,46px); }
+.page-hero h1.title--long { font-size: clamp(28px,3.05vw,42px); }
+.page-hero h1.title-flow > .title-clause { display: block; width: fit-content; max-inline-size: 100%; }
+.page-hero h1.title-flow > wbr, .home-hero h1.title-flow > wbr { display: none; }
+.page-hero .chapter-glyph { font-size: clamp(82px,8.5vw,115px); align-self: center; }
+/* The landing headline keeps its two deliberate lines and colour hierarchy. */
+.home-hero h1.title-flow .title-clause { display: block; color: inherit; }
+.home-hero h1.title-flow > .title-clause:last-child { color: #56705c; }
+.home-hero h1.title-flow .title-unit { display: inline; color: inherit; }
+/* Reading headings are lighter in scale than the page title. */
+.article-section h2.title-flow { font-size: clamp(26px,2.5vw,34px); line-height: 1.6; letter-spacing: 0; }
+.article-section h2.title--long, .objection-box h2.title--long { font-size: clamp(24px,2.25vw,30px); line-height: 1.65; }
+.objection-box h2.title-flow, .depth-bridge h2.title-flow { line-height: 1.65; }
+.study-card-copy h3.title-flow, .video-intro h3.title-flow { font-size: 25px; line-height: 1.65; }
+.study-card-copy h3.title--long, .video-intro h3.title--long { font-size: 23px; }
+.source-entry h2.title-flow { font-size: 24px; line-height: 1.65; }
+.source-entry h2.title-flow .title-clause { vertical-align: baseline; }
+.dialog-head h2.title-flow { min-width: 0; line-height: 1.55; }
+.dialog-head button { flex-shrink: 0; }
+/* A closed phrase may wrap at its reviewed internal boundaries on small screens. */
+@media (max-width: 850px) {
+  .page-hero { grid-template-columns: minmax(0,1fr) 85px; gap: 25px; }
+  .page-hero h1.title-flow { font-size: 36px; }
+  .page-hero h1.title--medium { font-size: 34px; }
+  .page-hero h1.title--long { font-size: 32px; }
+}
+@media (max-width: 600px) {
+  .page-hero { grid-template-columns: minmax(0,1fr); padding-block: 30px 34px; margin-bottom: 32px; }
+  .page-hero h1.title-flow { font-size: clamp(28px,7.7vw,34px); line-height: 1.6; margin-bottom: 20px; }
+  .page-hero h1.title--medium { font-size: clamp(26px,7.2vw,32px); }
+  .page-hero h1.title--long { font-size: clamp(24px,6.7vw,30px); }
+  .article-section h2.title-flow { font-size: 26px; line-height: 1.65; }
+  .article-section h2.title--long, .objection-box h2.title--long { font-size: 24px; }
+  .study-card-copy h3.title-flow, .video-intro h3.title-flow { font-size: 24px; }
+  .source-entry h2.title-flow { font-size: 22px; }
+  .image-dialog .dialog-head h2.title-flow { font-size: 23px; }
+  .home-hero h1.title-flow { font-size: clamp(32px,9vw,48px); line-height: 1.5; }
+}
+@media print {
+  .title-flow { break-after: avoid; }
+  .page-hero h1.title-flow { font-size: 28pt; }
+}

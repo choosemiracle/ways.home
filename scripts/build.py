@@ -14,6 +14,7 @@ import sys
 from pathlib import Path
 from xml.sax.saxutils import escape as xml_escape
 from enrichment import RichContent
+from typography import TitleTypography
 
 ROOT = Path(__file__).resolve().parents[1]
 BASE_URL = "https://choosemiracle.github.io/ways.home/"
@@ -30,7 +31,9 @@ ROAD_BY_ID = {r["id"]: r for r in ROADS}
 REF_NUM = {key: i + 1 for i, key in enumerate(SOURCES)}
 LENSES = {q["id"]: q for q in CHAPTERS["questions"]}
 PAGES: list[dict] = []
-VERSION = hashlib.sha256(b"".join((ROOT / f).read_bytes() for f in ("styles.css", "app.js", "assets/enrich.css", "assets/enrich.js"))).hexdigest()[:10]
+TYPOGRAPHY = TitleTypography(ROOT)
+TYPOGRAPHY.build_runtime()
+VERSION = hashlib.sha256(b"".join((ROOT / f).read_bytes() for f in ("styles.css", "app.js", "assets/enrich.css", "assets/enrich.js", "assets/heading-layout.css", "assets/heading-layout.js"))).hexdigest()[:10]
 
 
 def esc(value: object) -> str:
@@ -131,7 +134,7 @@ def page(path: str, title: str, description: str, body: str, active: str = "", k
 <html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#f4f0e7">
 <title>{esc(title)} · 同归 WAYS HOME</title><meta name="description" content="{esc(description)}"><link rel="canonical" href="{BASE_URL}{path}">
 <meta property="og:title" content="{esc(title)} · 同归"><meta property="og:description" content="{esc(description)}"><meta property="og:type" content="website"><meta property="og:url" content="{BASE_URL}{path}">
-<link rel="icon" href="{pre}assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="{pre}styles.css?v={VERSION}"><link rel="stylesheet" href="{pre}assets/enrich.css?v={VERSION}"><script>document.documentElement.classList.add('js');</script><script src="{pre}app.js?v={VERSION}" defer></script><script src="{pre}assets/enrich.js?v={VERSION}" defer></script></head>
+<link rel="icon" href="{pre}assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="{pre}styles.css?v={VERSION}"><link rel="stylesheet" href="{pre}assets/enrich.css?v={VERSION}"><link rel="stylesheet" href="{pre}assets/heading-layout.css?v={VERSION}"><script>document.documentElement.classList.add('js');</script><script src="{pre}app.js?v={VERSION}" defer></script><script src="{pre}assets/enrich.js?v={VERSION}" defer></script><script src="{pre}assets/heading-layout.js?v={VERSION}" defer></script></head>
 <body data-base="{pre}" data-page="{esc(path)}"><a class="skip-link" href="#main">跳到正文</a>
 <header class="site-header"><div class="shell header-inner"><a class="brand" href="{pre}index.html" aria-label="同归首页"><span class="brand-seal" aria-hidden="true">归</span><span><b>同归</b><small>WAYS HOME</small></span></a>
 <nav class="primary-nav" id="primary-nav" aria-label="主导航">{nav}</nav><div class="header-actions"><button class="icon-button js-only" data-search-open aria-label="搜索全站"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10" cy="10" r="6.5"/><path d="m15 15 6 6"/></svg><span>搜索</span></button><button class="menu-button js-only" aria-expanded="false" aria-controls="primary-nav">目录</button></div></div></header>
@@ -141,6 +144,7 @@ def page(path: str, title: str, description: str, body: str, active: str = "", k
 <dialog class="search-dialog" id="search-dialog" aria-labelledby="search-title"><div class="dialog-head"><h2 id="search-title">在图谱中寻找</h2><button class="icon-button" data-search-close aria-label="关闭搜索">关闭 ×</button></div><label for="site-search" class="small">输入问题、传统或方法，例如“无我”“艺术”“边界”</label><input id="site-search" type="search" placeholder="你正在寻找什么？" autocomplete="off"><p class="small muted" id="search-status" role="status">搜索本站文章与来源，不查询外部网站。</p><div id="search-results" class="search-results"></div><p class="small muted search-tip">⌘ / Ctrl + K 打开搜索 · Esc 返回阅读</p></dialog>
 {RICH.lightbox_dialog()}
 </body></html>'''
+    doc = TYPOGRAPHY.format_document(doc)
     target = ROOT / path
     target.parent.mkdir(parents=True, exist_ok=True)
     target.write_text(doc, encoding="utf-8")

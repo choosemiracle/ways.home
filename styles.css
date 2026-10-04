@@ -28,7 +28,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 button { border-radius: 0; }
 svg, img { max-width: 100%; }
 p { margin: 0 0 1em; }
-h1, h2, h3 { font-family: var(--serif); font-weight: 500; margin: 0; line-height: 1.42; overflow-wrap: anywhere; text-wrap: pretty; }
+h1, h2, h3 { font-family: var(--serif); font-weight: 500; margin: 0; line-height: 1.42; overflow-wrap: normal; line-break: strict; text-wrap: balance; }
 h1 { font-size: clamp(38px, 4.4vw, 62px); line-height: 1.35; letter-spacing: -.025em; }
 h2 { font-size: clamp(28px, 3vw, 42px); letter-spacing: -.02em; }
 h3 { font-size: 25px; }
