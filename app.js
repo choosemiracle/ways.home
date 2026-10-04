@@ -13,89 +13,52 @@ mobileNav?.querySelectorAll('a').forEach(link=>{
   });
 });
 
-const recommendation=document.getElementById('recommendation');
-const wayCards=[...document.querySelectorAll('.way-card')];
+const roadCards=[...document.querySelectorAll('.road-card')];
+const lensNote=document.getElementById('lensNote');
 
-const pathCopy={
-  self:{
-    title:'先从“听见自己”开始。',
-    body:'可以从帕克·帕尔默进入，再走向信任圈与贵格会传统：先辨认生命里真正重要的东西，再学习让这种内在感受接受关系、时间与行动的检验。'
+const lensCopy={
+  truth:{
+    title:'求真：不是只有一种“知道”。',
+    body:'科学强调公开可检验的证据与模型；哲学强调论证与概念澄清；历史学重建语境与证据链；第一人称传统研究体验本身。成熟的求真，不是让一种方法吞并所有问题，而是知道每一种认识方式能回答什么、不能回答什么。'
   },
-  relation:{
-    title:'先练习：靠近，而不接管。',
-    body:'可以从二人聆听开始，再进入信任圈与鲁米。重点不是更快理解对方，而是少一点解释和修理，让一个人仍然拥有自己的经验。'
+  good:{
+    title:'向善：从人格，到关系，再到制度。',
+    body:'德性传统关心“成为怎样的人”，义务论关心不可逾越的规范，后果论衡量行动结果，照护伦理重视具体关系，政治与法律则处理陌生人如何在冲突中共同生活。'
   },
-  group:{
-    title:'先看看“共同中心”是什么。',
-    body:'可以从共同等候进入，再延伸到贵格会、信任圈与 Pendle Hill：一群人如何在不争夺中心的前提下，形成更深的共同辨识。'
+  beauty:{
+    title:'近美：不仅是“好看”，而是重新训练感受力。',
+    body:'美学可以研究和谐、比例与形式，也研究崇高、悲剧、丑与陌生化。艺术的力量常常不在于提供答案，而在于改变注意力，让被习惯遮住的世界重新显现。'
   },
-  poetry:{
-    title:'先让第三物说话。',
-    body:'从鲁米、诗歌、电影与故事进入，再回到信任圈的第三物实践。先不解释作者，也不急着总结，只留意：它在我里面唤起了什么？'
-  },
-  life:{
-    title:'让内在工作接受现实检验。',
-    body:'可以从帕尔默与 Pendle Hill 开始，再进入贵格会的“内在—外在”传统。真正的看见，最终会改变工作、关系、选择与共同生活。'
-  },
-  practice:{
-    title:'先做一次，再决定往哪里走。',
-    body:'从 3 分钟静默、11 分钟二人聆听或 12 分钟共同等候开始。经验之后，再回到相应传统理解它的来源、边界与方法。'
+  home:{
+    title:'回归：同一个词，背后可能是完全不同的世界观。',
+    body:'道家的归根、佛教的解脱、基督宗教的共融、苏菲的忆念、心理学的整合、生态学的相互依存不能简单画等号。它们共同回应“分裂感”，但对“谁在归、归向哪里、怎样归”的回答不同。'
   }
 };
 
-document.querySelectorAll('[data-path]').forEach(card=>{
-  card.addEventListener('click',()=>{
-    const key=card.dataset.path;
-    const copy=pathCopy[key];
-    recommendation.querySelector('h3').textContent=copy.title;
-    recommendation.querySelector('p').textContent=copy.body;
-    wayCards.forEach(way=>{
-      way.classList.toggle('dimmed',!way.dataset.tags.includes(key));
+document.querySelectorAll('[data-lens]').forEach(button=>{
+  button.addEventListener('click',()=>{
+    const key=button.dataset.lens;
+    const copy=lensCopy[key];
+    lensNote.querySelector('h3').textContent=copy.title;
+    lensNote.querySelector('p').textContent=copy.body;
+    roadCards.forEach(card=>{
+      card.classList.toggle('dimmed',!card.dataset.tags.includes(key));
     });
-    recommendation.scrollIntoView({behavior:'smooth',block:'center'});
+    document.querySelectorAll('.road-filter button').forEach(filterButton=>{
+      filterButton.classList.toggle('active',filterButton.dataset.filter===key);
+    });
+    lensNote.scrollIntoView({behavior:'smooth',block:'center'});
   });
 });
 
-const pauseBtn=document.getElementById('pauseBtn');
-const timerPanel=document.getElementById('timerPanel');
-const timerDisplay=document.getElementById('timerDisplay');
-const timerCancel=document.getElementById('timerCancel');
-
-let timer=null;
-
-function formatTime(seconds){
-  const minutes=String(Math.floor(seconds/60)).padStart(2,'0');
-  const remaining=String(seconds%60).padStart(2,'0');
-  return minutes+':'+remaining;
-}
-
-function startTimer(seconds){
-  clearInterval(timer);
-  let remaining=seconds;
-  timerDisplay.textContent=formatTime(remaining);
-  timerPanel.hidden=false;
-
-  timer=setInterval(()=>{
-    remaining-=1;
-    timerDisplay.textContent=formatTime(Math.max(0,remaining));
-    if(remaining<=0){
-      clearInterval(timer);
-      timerDisplay.textContent='00:00';
-    }
-  },1000);
-}
-
-pauseBtn?.addEventListener('click',()=>startTimer(60));
-document.querySelectorAll('[data-timer]').forEach(button=>{
-  button.addEventListener('click',()=>startTimer(Number(button.dataset.timer)));
-});
-timerCancel?.addEventListener('click',()=>{
-  clearInterval(timer);
-  timerPanel.hidden=true;
-});
-document.addEventListener('keydown',event=>{
-  if(event.key==='Escape'&&!timerPanel.hidden){
-    clearInterval(timer);
-    timerPanel.hidden=true;
-  }
+document.querySelectorAll('.road-filter button').forEach(button=>{
+  button.addEventListener('click',()=>{
+    const filter=button.dataset.filter;
+    document.querySelectorAll('.road-filter button').forEach(item=>item.classList.remove('active'));
+    button.classList.add('active');
+    roadCards.forEach(card=>{
+      const show=filter==='all'||card.dataset.tags.includes(filter);
+      card.classList.toggle('dimmed',!show);
+    });
+  });
 });

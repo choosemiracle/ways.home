@@ -3,9 +3,9 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="theme-color" content="#eee9df" />
-  <title>同归 · WAYS HOME｜不同的道路，共同的方向</title>
-  <meta name="description" content="同归 · WAYS HOME：从真实处境出发，进入帕克·帕尔默、信任圈、贵格会、共同等候、彭德尔山、鲁米与二人聆听等不同道路，在静默、关系、辨识与实践中回到生命。" />
+  <meta name="theme-color" content="#ece6da" />
+  <title>同归 · WAYS HOME｜人类求真、向善、近美与回归之路</title>
+  <meta name="description" content="同归 · WAYS HOME：一张跨越宗教、哲学、科学、艺术、伦理、心理学与生态思想的人类探索地图。我们如何求真、向善、近美，又如何从分裂走向完整、从离家走向回归？" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -21,86 +21,92 @@
     </a>
 
     <nav class="desktop-nav" aria-label="主导航">
-      <a href="#begin">从此刻开始</a>
-      <a href="#rhythm">共同练习</a>
-      <a href="#paths">不同道路</a>
-      <a href="#practice">现在就做</a>
+      <a href="#questions">永恒追问</a>
+      <a href="#roads">人类道路</a>
+      <a href="#river">文明长河</a>
+      <a href="#unity">合一诸义</a>
+      <a href="#today">今日之问</a>
     </nav>
 
     <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobileNav">目录</button>
     <nav id="mobileNav" class="mobile-nav" aria-label="移动导航">
-      <a href="#begin">从此刻开始</a>
-      <a href="#rhythm">共同练习</a>
-      <a href="#paths">不同道路</a>
-      <a href="#practice">现在就做</a>
+      <a href="#questions">永恒追问</a>
+      <a href="#roads">人类道路</a>
+      <a href="#river">文明长河</a>
+      <a href="#unity">合一诸义</a>
+      <a href="#today">今日之问</a>
     </nav>
   </header>
 
   <main id="main">
     <section id="top" class="hero">
-      <div class="hero-wash" aria-hidden="true"></div>
+      <div class="hero-field" aria-hidden="true"></div>
 
       <div class="hero-copy">
-        <p class="eyebrow">DIFFERENT PATHS · ONE COMMON PURPOSE</p>
+        <p class="eyebrow">DIFFERENT PATHS · ONE HUMAN SEARCH</p>
         <h1>
           <span class="hero-title-cn">同归</span>
           <span class="hero-title-en">WAYS HOME</span>
         </h1>
+        <p class="hero-question">
+          从古至今，人类究竟在寻找什么？
+        </p>
         <p class="hero-lede">
-          生命给了我们不同的语言、传统与道路。我们不急着把它们变成同一种东西，
-          只愿意看看：当恐惧少一点，评判少一点，彼此之间的阻隔少一点，
-          人会不会更有可能回到真实、关系与给予。
+          我们建神庙，也建实验室；写经书，也写方程；雕刻石像，也创作交响曲；
+          建立法律、学校、医院与共同体。表面上，它们彼此遥远，背后却反复出现几类古老的追问：
+          <strong>什么是真的？怎样活才是好的？什么值得我们凝视与珍惜？我们如何不再彼此隔绝，并重新找到自己在整体中的位置？</strong>
         </p>
         <div class="hero-actions">
-          <a class="btn primary" href="#begin">从我此刻的处境进入</a>
-          <button class="btn quiet" id="pauseBtn" type="button">先安静 60 秒</button>
+          <a class="btn primary" href="#questions">从四个问题开始</a>
+          <a class="btn quiet" href="#river">沿文明长河进入</a>
         </div>
-        <p class="hero-note">这里没有唯一入口。你可以从一个问题、一首诗、一次聆听，或一段静默开始。</p>
+        <p class="hero-note">
+          “同归”不是说所有传统拥有同一个答案，而是尝试理解：不同文明为何一再从相似的人类处境出发，发展出如此不同、又彼此照亮的道路。
+        </p>
       </div>
 
-      <div class="hero-map" aria-label="不同道路围绕共同方向的示意图">
-        <svg viewBox="0 0 620 620" role="img">
+      <div class="human-compass" aria-label="真、善、美、归四个方向围绕人的示意图">
+        <svg viewBox="0 0 640 640" role="img">
           <defs>
-            <radialGradient id="homeGlow" cx="50%" cy="50%" r="50%">
-              <stop offset="0%" stop-color="#d7b865" stop-opacity=".72"/>
-              <stop offset="44%" stop-color="#d7b865" stop-opacity=".18"/>
-              <stop offset="100%" stop-color="#d7b865" stop-opacity="0"/>
+            <radialGradient id="centerGlow" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stop-color="#d5b96d" stop-opacity=".68"/>
+              <stop offset="46%" stop-color="#d5b96d" stop-opacity=".16"/>
+              <stop offset="100%" stop-color="#d5b96d" stop-opacity="0"/>
             </radialGradient>
-            <linearGradient id="pathFade" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stop-color="#314139" stop-opacity=".08"/>
-              <stop offset="46%" stop-color="#314139" stop-opacity=".55"/>
-              <stop offset="100%" stop-color="#9d6a4d" stop-opacity=".18"/>
-            </linearGradient>
           </defs>
+          <circle class="compass-ring outer" cx="320" cy="320" r="246"/>
+          <circle class="compass-ring middle" cx="320" cy="320" r="170"/>
+          <circle class="compass-ring inner" cx="320" cy="320" r="96"/>
+          <circle class="compass-glow" cx="320" cy="320" r="110" fill="url(#centerGlow)"/>
 
-          <circle class="map-ring ring-a" cx="310" cy="310" r="242"/>
-          <circle class="map-ring ring-b" cx="310" cy="310" r="172"/>
-          <circle class="map-ring ring-c" cx="310" cy="310" r="102"/>
-          <circle class="map-glow" cx="310" cy="310" r="92" fill="url(#homeGlow)"/>
+          <line class="axis" x1="320" y1="72" x2="320" y2="568"/>
+          <line class="axis" x1="72" y1="320" x2="568" y2="320"/>
+          <line class="axis soft" x1="145" y1="145" x2="495" y2="495"/>
+          <line class="axis soft" x1="495" y1="145" x2="145" y2="495"/>
 
-          <path class="map-path p1" d="M96 160 C178 172 225 218 310 310"/>
-          <path class="map-path p2" d="M526 139 C447 174 397 220 310 310"/>
-          <path class="map-path p3" d="M560 358 C463 345 410 333 310 310"/>
-          <path class="map-path p4" d="M445 515 C402 432 363 383 310 310"/>
-          <path class="map-path p5" d="M150 498 C205 421 248 376 310 310"/>
-          <path class="map-path p6" d="M72 329 C166 327 224 323 310 310"/>
-
-          <g class="map-center">
-            <circle cx="310" cy="310" r="7"/>
-            <text x="310" y="300">COMMON PURPOSE</text>
-            <text class="cn" x="310" y="332">归</text>
+          <g class="compass-word truth">
+            <text x="320" y="55">真</text>
+            <text class="en" x="320" y="80">TRUTH</text>
+          </g>
+          <g class="compass-word good">
+            <text x="594" y="327">善</text>
+            <text class="en" x="588" y="350">GOOD</text>
+          </g>
+          <g class="compass-word beauty">
+            <text x="320" y="606">美</text>
+            <text class="en" x="320" y="627">BEAUTY</text>
+          </g>
+          <g class="compass-word home">
+            <text x="47" y="327">归</text>
+            <text class="en" x="54" y="350">HOME</text>
           </g>
 
-          <g class="map-labels">
-            <text x="82" y="143">静默</text>
-            <text x="506" y="122">聆听</text>
-            <text x="530" y="388">关系</text>
-            <text x="428" y="544">辨识</text>
-            <text x="106" y="524">诗歌</text>
-            <text x="48" y="359">行动</text>
+          <g class="compass-center">
+            <text x="320" y="306">HUMAN</text>
+            <text class="cn" x="320" y="347">人</text>
           </g>
         </svg>
-        <p>不同的路，不需要消失在同一种解释里。</p>
+        <p>求真 · 向善 · 近美 · 归于完整</p>
       </div>
     </section>
 
@@ -109,224 +115,444 @@
       <p>天下同归而殊涂，一致而百虑。</p>
     </section>
 
-    <section id="begin" class="section begin-section">
+    <section id="questions" class="section questions-section">
       <div class="section-intro">
-        <span class="kicker">BEGIN WHERE YOU ARE</span>
-        <h2>先不问你相信什么。<br>先问：你此刻在哪里？</h2>
-        <p>名字、传统和方法都可以晚一点再知道。先从一个真实处境开始，让道路来找你。</p>
+        <span class="kicker">FOUR ENDURING QUESTIONS</span>
+        <h2>也许人类一直在回答四个问题。</h2>
+        <p>
+          它们从未被最终解决，却不断催生新的宗教、哲学、科学、艺术、伦理与制度。
+          “同归”以这四个问题，而不是某位思想家或某个宗派，作为整张地图的坐标。
+        </p>
       </div>
 
-      <div class="entry-grid">
-        <button class="entry-card" type="button" data-path="self">
-          <span class="entry-mark">一</span>
-          <small>听见自己</small>
-          <h3>外面的声音太多，我想重新分清什么对我是真的。</h3>
-          <i>进入 →</i>
-        </button>
-        <button class="entry-card" type="button" data-path="relation">
-          <span class="entry-mark">二</span>
-          <small>真正聆听</small>
-          <h3>我想靠近一个人，却不急着解释、修理或改变他。</h3>
-          <i>进入 →</i>
-        </button>
-        <button class="entry-card" type="button" data-path="group">
-          <span class="entry-mark">三</span>
-          <small>共同辨识</small>
-          <h3>一群人怎样不争着占据中心，却仍能形成共同方向？</h3>
-          <i>进入 →</i>
-        </button>
-        <button class="entry-card" type="button" data-path="poetry">
-          <span class="entry-mark">四</span>
-          <small>借物观心</small>
-          <h3>我不想先听道理，想从诗歌、电影与故事进入。</h3>
-          <i>进入 →</i>
-        </button>
-        <button class="entry-card" type="button" data-path="life">
-          <span class="entry-mark">五</span>
-          <small>回到生活</small>
-          <h3>我不想只在“内在世界”里打转，想把看见带回关系与行动。</h3>
-          <i>进入 →</i>
-        </button>
-        <button class="entry-card" type="button" data-path="practice">
-          <span class="entry-mark">六</span>
-          <small>直接经验</small>
-          <h3>先别再解释了。我想现在就亲自做一次。</h3>
-          <i>进入 →</i>
-        </button>
+      <div class="question-grid">
+        <article class="question-card q-truth">
+          <span class="big-char">真</span>
+          <small>WHAT IS REAL?</small>
+          <h3>什么是真的？<br>我们凭什么知道？</h3>
+          <p>神话诉诸象征，哲学诉诸论证，科学依靠观察、实验与模型，现象学返回经验本身，默观传统则追问知者与所知之间的关系。</p>
+          <button type="button" data-lens="truth">照亮“求真”的道路</button>
+        </article>
+
+        <article class="question-card q-good">
+          <span class="big-char">善</span>
+          <small>HOW SHALL WE LIVE?</small>
+          <h3>怎样活，<br>才不辜负自己与他人？</h3>
+          <p>有人谈德性，有人谈义务，有人衡量后果；有人强调仁、慈悲、公义、兼爱、权利、照护与共同善。伦理从来不只是“内心好”，也关乎制度与行动。</p>
+          <button type="button" data-lens="good">照亮“向善”的道路</button>
+        </article>
+
+        <article class="question-card q-beauty">
+          <span class="big-char">美</span>
+          <small>WHAT IS WORTH BEHOLDING?</small>
+          <h3>什么让生命<br>值得凝视、惊叹与创造？</h3>
+          <p>美可以是和谐、比例与形式，也可以是崇高、破碎、悲剧与陌生化。艺术并不只是装饰世界，它也不断改变我们能够看见什么、感受什么。</p>
+          <button type="button" data-lens="beauty">照亮“近美”的道路</button>
+        </article>
+
+        <article class="question-card q-home">
+          <span class="big-char">归</span>
+          <small>WHERE DO WE BELONG?</small>
+          <h3>我属于哪里？<br>分裂之后，如何重新完整？</h3>
+          <p>有人说归根，有人说解脱、悔改、共融、觉醒、整合、和谐或相互依存。这些词不能互相替代，却都回应着“我与自己、他人、自然和整体是什么关系”。</p>
+          <button type="button" data-lens="home">照亮“回归”的道路</button>
+        </article>
       </div>
 
-      <aside class="recommendation" id="recommendation" aria-live="polite">
-        <span>此刻的入口</span>
-        <h3>不需要先选一条“正确的路”。</h3>
-        <p>点击上面的某种处境，我们只为你照亮几条可能有帮助的路径。</p>
+      <aside class="lens-note" id="lensNote" aria-live="polite">
+        <span>阅读提示</span>
+        <h3>四个问题彼此纠缠。</h3>
+        <p>人类很少只追求一种价值：对“真”的认识会改变“善”的判断；对“美”的体验会改变我们如何看世界；对“归属”的理解也会反过来塑造知识、伦理与艺术。</p>
       </aside>
     </section>
 
-    <section id="rhythm" class="section rhythm-section">
+    <section class="section fracture-section">
       <div class="section-intro split">
         <div>
-          <span class="kicker">A SHARED RHYTHM</span>
-          <h2>路不同，<br>有些练习却会反复出现。</h2>
+          <span class="kicker">WHY DO WE LEAVE HOME?</span>
+          <h2>所谓“离家”，未必是从某个地方离开。</h2>
         </div>
         <p>
-          不同传统有各自的历史与语言，不能彼此替代。
-          但在真实实践里，我们常常反复回到四个动作：
-          停下来、真正听、看见自己的观看方式，再把所见带回生活。
+          它更像人类反复经验到的几种断裂。不同传统对这些断裂的诊断不同，
+          但“我为何不完整”几乎贯穿了宗教、哲学、心理学与现代社会批判。
         </p>
       </div>
 
-      <div class="rhythm-track">
+      <div class="fracture-map">
         <article>
-          <span>止 · PAUSE</span>
-          <h3>先停一下</h3>
-          <p>暂时不急着回答，不把过去的答案立刻套在眼前。给尚未成形的东西一点时间。</p>
+          <span>01</span>
+          <h3>人与自己</h3>
+          <p>欲望与理性、意识与无意识、角色与真实感受、当下与过去互相拉扯。</p>
+          <small>INNER DIVISION</small>
         </article>
-        <div class="rhythm-arrow" aria-hidden="true">→</div>
         <article>
-          <span>听 · LISTEN</span>
-          <h3>让对方完整存在</h3>
-          <p>少一点解释、建议和接管。真正的聆听不是证明“我懂了”，而是让另一个人仍然拥有自己。</p>
+          <span>02</span>
+          <h3>人与他人</h3>
+          <p>恐惧、竞争、暴力、支配与孤独，使“另一个人”变成威胁、工具或标签。</p>
+          <small>SEPARATION</small>
         </article>
-        <div class="rhythm-arrow" aria-hidden="true">→</div>
         <article>
-          <span>照 · SEE</span>
-          <h3>也看看是谁在看</h3>
-          <p>当我被触怒、吸引或急于评判时，也许值得问：眼前发生的，和我带来的期待、恐惧与记忆有什么关系？</p>
+          <span>03</span>
+          <h3>人与自然</h3>
+          <p>我们既属于生命世界，也拥有改造世界的巨大力量；当自然只剩“资源”，归属感便开始断裂。</p>
+          <small>DISENCHANTMENT</small>
         </article>
-        <div class="rhythm-arrow" aria-hidden="true">→</div>
         <article>
-          <span>归 · RETURN</span>
-          <h3>回到关系与日常</h3>
-          <p>任何内在工作，最后都要进入吃饭、工作、家庭、选择与共同生活。否则，它还没有完成。</p>
+          <span>04</span>
+          <h3>知者与所知</h3>
+          <p>客观化让现代知识获得巨大力量，也不断提出一个问题：当世界成为对象，我们是否也失去了一部分参与其中的经验？</p>
+          <small>SUBJECT / OBJECT</small>
         </article>
-      </div>
-
-      <div class="quiet-statement">
-        <p>有些改变不是“增加了什么”，而是当防御、评判与证明稍微退后，原本被遮住的东西重新可见。</p>
+        <article>
+          <span>05</span>
+          <h3>个人与整体</h3>
+          <p>自由让人成为独立个体，也可能带来失根、异化与意义危机：我如何既成为自己，又不是一个孤岛？</p>
+          <small>SELF / WHOLE</small>
+        </article>
       </div>
     </section>
 
-    <section id="paths" class="section paths-section">
-      <div class="paths-heading">
+    <section id="roads" class="section roads-section">
+      <div class="roads-heading">
         <div>
-          <span class="kicker light">WAYS HOME</span>
-          <h2>七条已经展开的路</h2>
+          <span class="kicker light">NINE HUMAN WAYS</span>
+          <h2>九条人类不断重走的路</h2>
         </div>
-        <p>每一条路都保留自己的来处。这里不建立一套新的“大一统理论”，只提供一张可以往返的地图。</p>
+        <p>
+          它们不是互斥的学科，而是九种不同的“接近方式”：
+          有的通过信、有的通过证据，有的通过概念，有的通过身体、形式、关系与制度。
+        </p>
       </div>
 
-      <div class="ways-map">
-        <div class="ways-center" aria-hidden="true">
-          <span>同归</span>
-          <small>COMMON PURPOSE</small>
-        </div>
+      <div class="road-filter" role="group" aria-label="按目标筛选道路">
+        <button class="active" type="button" data-filter="all">全部</button>
+        <button type="button" data-filter="truth">求真</button>
+        <button type="button" data-filter="good">向善</button>
+        <button type="button" data-filter="beauty">近美</button>
+        <button type="button" data-filter="home">回归</button>
+      </div>
 
-        <a class="way-card w1" data-tags="self life group" href="https://choosemiracle.github.io/parker.palmer/" target="_blank" rel="noopener">
-          <small>01 · PARKER J. PALMER</small>
-          <h3>帕克·帕尔默</h3>
-          <p>成为自己，而不离开这个世界。</p>
-          <b>思想 · 原著 · 实践 ↗</b>
-        </a>
+      <div class="road-grid">
+        <article class="road-card" data-tags="home beauty good">
+          <small>01 · MYTH & RITUAL</small>
+          <h3>神话与仪式</h3>
+          <p class="road-question">我如何重新进入一个有意义的宇宙？</p>
+          <p>在人类文字出现以前，祭祀、葬礼、节庆、舞蹈、图像和故事已经把个人生命放进祖先、土地、季节与宇宙秩序之中。</p>
+          <b>方法：象征 · 仪式 · 叙事 · 共同参与</b>
+        </article>
 
-        <a class="way-card w2" data-tags="self relation group practice" href="https://choosemiracle.github.io/circleoftrust/" target="_blank" rel="noopener">
-          <small>02 · CIRCLE OF TRUST</small>
-          <h3>信任圈</h3>
-          <p>陪伴一个人，却不占领他的内心。</p>
-          <b>静默 · 第三物 · 开放问题 ↗</b>
-        </a>
+        <article class="road-card" data-tags="truth good home">
+          <small>02 · PHILOSOPHY</small>
+          <h3>哲学</h3>
+          <p class="road-question">怎样把未经检验的生活变成可追问的生活？</p>
+          <p>从中国、印度到希腊，哲学既是论证，也是修身、辨析与生活方式：澄清概念，质疑习惯，学习如何判断何为真实、何为值得。</p>
+          <b>方法：追问 · 论证 · 辨析 · 修养</b>
+        </article>
 
-        <a class="way-card w3" data-tags="self group life practice" href="https://choosemiracle.github.io/quaker/" target="_blank" rel="noopener">
-          <small>03 · QUAKER</small>
-          <h3>贵格会</h3>
-          <p>从内在经验，到共同辨识与外在行动。</p>
-          <b>历史 · 神学 · 实践 ↗</b>
-        </a>
+        <article class="road-card" data-tags="good home truth">
+          <small>03 · RELIGION</small>
+          <h3>宗教</h3>
+          <p class="road-question">有限生命如何与终极意义发生关系？</p>
+          <p>盟约、信仰、敬拜、戒律、慈悲、救赎、解脱、归依与共同体，让个体生命进入一个超出自我的意义秩序。</p>
+          <b>方法：信仰 · 礼仪 · 戒律 · 共同体</b>
+        </article>
 
-        <a class="way-card w4" data-tags="group relation practice" href="https://choosemiracle.github.io/meeting/" target="_blank" rel="noopener">
-          <small>04 · QUAKER MEETING</small>
-          <h3>共同等候</h3>
-          <p>圆心没有讲台，也不属于任何一个人。</p>
-          <b>静默 · 聚集 · 群体明辨 ↗</b>
-        </a>
+        <article class="road-card" data-tags="home truth beauty">
+          <small>04 · MYSTICISM & CONTEMPLATION</small>
+          <h3>神秘与默观</h3>
+          <p class="road-question">如果“分离感”本身可以改变，会发生什么？</p>
+          <p>静默、祈祷、禅观、忆念、瑜伽与默观等传统，以直接经验和人格转化为核心。但“无二”“共融”“与神联合”彼此并不等义。</p>
+          <b>方法：静默 · 祈祷 · 观照 · 转化</b>
+        </article>
 
-        <a class="way-card w5" data-tags="life group self" href="https://choosemiracle.github.io/pendlehill/" target="_blank" rel="noopener">
-          <small>05 · PENDLE HILL</small>
-          <h3>彭德尔山</h3>
-          <p>思想如何住进一处真实的共同生活。</p>
-          <b>学习 · 工作 · 共同体 ↗</b>
-        </a>
+        <article class="road-card" data-tags="truth">
+          <small>05 · SCIENCE</small>
+          <h3>科学</h3>
+          <p class="road-question">哪些关于世界的说法，经得起公开检验？</p>
+          <p>系统观察、实验、模型、推理、预测与可修正性，让人类逐步摆脱仅凭权威与直觉判断自然世界。科学追求的是可靠解释，而不是预设的精神结论。</p>
+          <b>方法：观察 · 实验 · 模型 · 证伪与修正</b>
+        </article>
 
-        <a class="way-card w6" data-tags="poetry self relation" href="https://choosemiracle.github.io/rumi365/" target="_blank" rel="noopener">
-          <small>06 · RUMI</small>
-          <h3>鲁米</h3>
-          <p>从原典与诗歌，重新回到自己的生命。</p>
-          <b>诗歌 · 苏非 · 内在旅程 ↗</b>
-        </a>
+        <article class="road-card" data-tags="beauty truth home">
+          <small>06 · ART</small>
+          <h3>艺术</h3>
+          <p class="road-question">有没有一些真实，只能被看见、听见、感受到？</p>
+          <p>诗、音乐、绘画、建筑、戏剧、电影与舞蹈，让形式本身成为认识世界的方式。艺术可以追求和谐，也可以以破碎揭示我们平常不愿看见的现实。</p>
+          <b>方法：形式 · 感知 · 象征 · 表达</b>
+        </article>
 
-        <a class="way-card w7" data-tags="relation self practice" href="https://choosemiracle.github.io/circleoftrust/#practice" target="_blank" rel="noopener">
-          <small>07 · DYAD</small>
-          <h3>二人聆听</h3>
-          <p>一个人说，一个人完整地在场。</p>
-          <b>结构化二人练习 ↗</b>
-        </a>
+        <article class="road-card" data-tags="good home">
+          <small>07 · ETHICS, LAW & POLITICS</small>
+          <h3>伦理、法律与政治</h3>
+          <p class="road-question">陌生人如何共同生活，而不只靠善意？</p>
+          <p>德性、义务、后果、权利、公义、照护、制度与公共讨论，把“善”从私人动机带到共同生活的结构中。</p>
+          <b>方法：德性 · 规范 · 权利 · 制度</b>
+        </article>
+
+        <article class="road-card" data-tags="home good truth">
+          <small>08 · PSYCHOLOGY & HEALING</small>
+          <h3>心理学与疗愈</h3>
+          <p class="road-question">一个人如何与自己不愿面对的部分重新建立关系？</p>
+          <p>无意识、依恋、创伤、人格、意义与关系研究，让现代人以新的语言理解内部冲突。这里的“整合”通常是心理层面的，不必等同于宗教解脱。</p>
+          <b>方法：觉察 · 关系 · 叙事 · 整合</b>
+        </article>
+
+        <article class="road-card" data-tags="truth good home beauty">
+          <small>09 · ECOLOGY & SYSTEMS</small>
+          <h3>生态与系统思想</h3>
+          <p class="road-question">如果“个体”从来都存在于关系网络里呢？</p>
+          <p>生态学研究生物与环境的动态相互作用；系统思想提醒我们，复杂整体不能总被还原成孤立部分。它为“相互依存”提供了科学与哲学上的新语言。</p>
+          <b>方法：关系 · 网络 · 层级 · 反馈</b>
+        </article>
       </div>
     </section>
 
-    <section id="practice" class="section practice-section">
+    <section id="river" class="section river-section">
       <div class="section-intro">
-        <span class="kicker">EXPERIENCE BEFORE EXPLANATION</span>
-        <h2>今天，只做一件小事。</h2>
-        <p>真正的“同归”不发生在概念里。它发生在下一次你愿意停下来、听清楚、少判断一点的时刻。</p>
+        <span class="kicker">A RIVER OF CIVILIZATION</span>
+        <h2>人类没有沿一条直线“进步”。<br>我们不断分化，也不断重新连接。</h2>
+        <p>
+          下面不是完整世界史，而是一条思想史的主线：人如何从参与式宇宙走向制度宗教与哲学，
+          又走向现代科学、个人自主与学科分化，并在新的条件下重新追问整体。
+        </p>
       </div>
 
-      <div class="practice-grid">
+      <div class="timeline">
         <article>
-          <span>一个人 · 3 分钟</span>
-          <h3>把答案放下三分钟</h3>
-          <p>只把这个问题留在心里：最近，有什么我已经隐约知道，却一直没有认真看一看？</p>
-          <button class="practice-action" type="button" data-timer="180">开始静默</button>
+          <div class="time">远古 — 文字之前</div>
+          <div class="timeline-body">
+            <h3>世界首先不是“对象”，而是我们身处其中的整体。</h3>
+            <p>神话、仪式、祖先、土地、节律与图像，把个人嵌入群体和宇宙。这里的整体感很强，但也不能浪漫化：它同样可能伴随禁忌、等级与排斥。</p>
+            <span>参与 · 归属 · 神话 · 仪式</span>
+          </div>
         </article>
 
         <article>
-          <span>两个人 · 11 分钟</span>
-          <h3>完整地听完一个人</h3>
-          <p>A 分享 5 分钟，静默 30 秒，B 分享 5 分钟。聆听者不追问、不建议、不讲自己的故事。</p>
-          <a class="practice-action" href="https://choosemiracle.github.io/circleoftrust/#practice" target="_blank" rel="noopener">进入二人练习 ↗</a>
+          <div class="time">约公元前一千纪中后期</div>
+          <div class="timeline-body">
+            <h3>古典转折：人开始更自觉地追问“怎样活”。</h3>
+            <p>中国诸子、印度哲学与宗教传统、希腊哲学、古代以色列先知传统等，在各自语境中把道德、自我修养、智慧、解脱、公义与终极真实推向更高程度的反思。</p>
+            <span>修身 · 智慧 · 公义 · 解脱 · Logos</span>
+          </div>
         </article>
 
         <article>
-          <span>一群人 · 12 分钟</span>
-          <h3>一起等候，不争着填满安静</h3>
-          <p>围坐下来，没有主题发言。一起安静，留意什么时候真的有话需要说，什么时候不说更真实。</p>
-          <a class="practice-action" href="https://choosemiracle.github.io/meeting/practice.html" target="_blank" rel="noopener">进入共同等候 ↗</a>
+          <div class="time">古典晚期 — 中世纪</div>
+          <div class="timeline-body">
+            <h3>大传统形成：真、善、美重新被安置进神圣秩序。</h3>
+            <p>宗教制度、寺院、经院哲学、修行传统、圣像、建筑、音乐与法律彼此交织。知识不只是“知道”，也常常意味着修炼、归信与共同生活。</p>
+            <span>经院 · 寺院 · 礼仪 · 修行 · 圣艺</span>
+          </div>
+        </article>
+
+        <article>
+          <div class="time">15—18 世纪</div>
+          <div class="timeline-body">
+            <h3>现代分化开始：世界越来越能够被独立研究。</h3>
+            <p>人文主义、宗教改革、科学革命与启蒙，使知识、信仰、政治与艺术逐步拥有各自标准。个人良知、证据、权利与公共理性获得前所未有的地位。</p>
+            <span>主体 · 科学 · 自由 · 权利 · 理性</span>
+          </div>
+        </article>
+
+        <article>
+          <div class="time">19 世纪</div>
+          <div class="timeline-body">
+            <h3>现代性的力量，也带来“异化”的新语言。</h3>
+            <p>工业化和城市化改变生活；浪漫主义重新寻找自然、情感与崇高；马克思谈异化，达尔文重绘生命史，心理学和社会科学逐渐成形。</p>
+            <span>工业 · 浪漫 · 异化 · 演化 · 社会科学</span>
+          </div>
+        </article>
+
+        <article>
+          <div class="time">20 世纪</div>
+          <div class="timeline-body">
+            <h3>“完整的人”重新成为问题。</h3>
+            <p>现象学回到生活世界，存在主义追问真实与自由，心理治疗处理内在分裂，现代艺术拆解旧形式，人权运动扩大“谁被视为完整的人”，系统思想开始重新描述整体与关系。</p>
+            <span>生活世界 · 存在 · 心理 · 人权 · 系统</span>
+          </div>
+        </article>
+
+        <article>
+          <div class="time">21 世纪 · 此刻</div>
+          <div class="timeline-body">
+            <h3>我们拥有最强大的知识工具，也面对最深的连接危机。</h3>
+            <p>生态危机、数字技术、人工智能、全球互依与身份冲突同时发生。今天的问题不只是“知道更多”，而是如何让知识、伦理、审美、心理与共同体重新进入对话。</p>
+            <span>生态 · AI · 全球互依 · 多元 · 再整合</span>
+          </div>
         </article>
       </div>
     </section>
 
-    <section class="section closing-section">
-      <div class="closing-mark" aria-hidden="true">同</div>
-      <div class="closing-copy">
-        <span class="kicker">NOT ONE ANSWER</span>
-        <h2>我们不需要先成为一样的人，<br>才有可能彼此相遇。</h2>
+    <section id="unity" class="section unity-section">
+      <div class="unity-heading">
+        <div>
+          <span class="kicker light">NOT ONE KIND OF ONENESS</span>
+          <h2>“从分裂到合一”，至少有八种完全不同的意思。</h2>
+        </div>
         <p>
-          这里所寻找的“共同”，不是意见一致，也不是把差异抹平。
-          它更像一种关系能力：我可以保留自己的道路，也不必把你变成我；
-          我可以认真表达，也愿意让我的判断松一点；我可以给予，也允许自己接受。
+          如果把这些都叫“合一”，我们反而会失去真正的理解。
+          同归真正要做的，是让差异被看见，然后才谈彼此照亮。
+        </p>
+      </div>
+
+      <div class="unity-grid">
+        <article>
+          <span>儒家</span>
+          <h3>和，而不同</h3>
+          <p>重点不是消灭差异，而是在关系、礼与德性实践中形成可以共同生活的秩序。</p>
+        </article>
+        <article>
+          <span>道家</span>
+          <h3>归根 · 自然 · 无为</h3>
+          <p>减少强制与自我中心的造作，重新与更大的自然秩序相应。</p>
+        </article>
+        <article>
+          <span>佛教</span>
+          <h3>无我 · 缘起 · 解脱</h3>
+          <p>问题不是“小我与大我合并”，而是看见执著、无明与独立自性的错觉如何制造苦。</p>
+        </article>
+        <article>
+          <span>不二吠檀多</span>
+          <h3>梵我一如</h3>
+          <p>在特定吠檀多传统中，终极认识涉及个体自我与绝对实在的非二元同一；这并不代表所有印度哲学。</p>
+        </article>
+        <article>
+          <span>犹太—基督—伊斯兰诸传统</span>
+          <h3>盟约 · 共融 · 归向</h3>
+          <p>多数有神论传统即使使用“联合”语言，也通常保留人与神的区分，更强调关系、意志与爱的相应。</p>
+        </article>
+        <article>
+          <span>苏菲传统</span>
+          <h3>忆念 · 爱 · fana / baqa</h3>
+          <p>自我中心感的消退与在神圣临在中的存续，并不简单等于“人变成神”。</p>
+        </article>
+        <article>
+          <span>科学与系统研究</span>
+          <h3>解释的统一 · 关系的整体</h3>
+          <p>科学可以统一规律、模型和层级，也可以研究复杂相互作用，但它本身并不推出某种宗教性的“万物一体”。</p>
+        </article>
+        <article>
+          <span>心理学</span>
+          <h3>人格整合</h3>
+          <p>把被压抑、否认或冲突的部分纳入更完整的自我关系，是心理意义的整合，不等于形上意义的合一。</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section differentiation-section">
+      <div class="differentiation-mark" aria-hidden="true">合</div>
+      <div class="differentiation-copy">
+        <span class="kicker">THE MODERN TASK</span>
+        <h2>真正成熟的“同归”，不是退回一个未经分化的整体。</h2>
+        <p>
+          古代整体世界有它的力量，也有它的代价。现代性让科学从神学中独立，让艺术拥有自己的语言，
+          让个人拥有权利和良知，让不同知识领域发展出严格标准。这种<strong>分化</strong>本身不是错误。
         </p>
         <p>
-          如果这些不同的道路最后都能让人少一点防御，多一点真实；
-          少一点彼此隔绝，多一点能够共同生活的空间——那么，也许“归”已经在发生。
+          真正的问题，是<strong>分化何时变成彼此失联的碎片</strong>：知识与伦理分开，技术与目的分开，
+          个体与共同体分开，人类与自然分开，效率与意义分开。
         </p>
+        <p class="strong">
+          所以今天需要的，不是“大一统”，而是：<br>
+          <em>经过分化之后的重新连接；保留差异之后的更深关系。</em>
+        </p>
+      </div>
+    </section>
+
+    <section id="today" class="section today-section">
+      <div class="section-intro">
+        <span class="kicker">WHERE WE ARE NOW</span>
+        <h2>如果把整个人类探索压缩成一张地图，<br>我们今天大概站在这里。</h2>
+      </div>
+
+      <div class="today-map">
+        <div class="today-center">
+          <span>人</span>
+          <small>HUMAN</small>
+        </div>
+        <article>
+          <b>真</b>
+          <h3>我们知道得越来越多。</h3>
+          <p>但事实并不会自动告诉我们什么值得追求。</p>
+        </article>
+        <article>
+          <b>善</b>
+          <h3>我们拥有更普遍的权利语言。</h3>
+          <p>但制度、身份与利益冲突仍不断制造新的排斥。</p>
+        </article>
+        <article>
+          <b>美</b>
+          <h3>每个人都能生产与传播图像。</h3>
+          <p>但注意力被争夺之后，我们反而更难真正凝视。</p>
+        </article>
+        <article>
+          <b>归</b>
+          <h3>我们前所未有地互联。</h3>
+          <p>却也前所未有地需要回答：连接是否真的等于关系？</p>
+        </article>
+      </div>
+
+      <div class="final-thesis">
+        <p>于是，“同归”最终不是替人类寻找一个统一答案。</p>
+        <h2>它想寻找的是一种能力：</h2>
+        <div class="thesis-lines">
+          <span>让科学继续严格，而不必失去敬畏。</span>
+          <span>让宗教继续深刻，而不必拒绝检验。</span>
+          <span>让艺术继续自由，而不必与真实生活脱节。</span>
+          <span>让个人继续独立，而不必成为孤岛。</span>
+          <span>让不同传统保持差异，却仍有可能彼此学习。</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section editorial-section">
+      <div class="section-intro">
+        <span class="kicker">HOW TO READ THIS MAP</span>
+        <h2>这不是一张“万教归一图”。</h2>
+      </div>
+
+      <div class="editorial-grid">
+        <article>
+          <span>01</span>
+          <h3>问题可以相通，答案不必相同。</h3>
+          <p>不同传统可能都谈“苦”“真理”“爱”或“回归”，但词义、世界观与实践后果可能非常不同。</p>
+        </article>
+        <article>
+          <span>02</span>
+          <h3>体验值得尊重，也必须允许检验。</h3>
+          <p>第一人称经验、哲学论证、历史研究与科学证据各有边界；任何一种都不自动拥有全部解释权。</p>
+        </article>
+        <article>
+          <span>03</span>
+          <h3>“完整”不等于取消冲突。</h3>
+          <p>真正的整合往往意味着更能承载差异、悖论与不确定，而不是强迫所有东西看起来一致。</p>
+        </article>
+        <article>
+          <span>04</span>
+          <h3>所有宏大思想，都要回到人的生活。</h3>
+          <p>一个观念如果不能进入关系、身体、工作、制度、自然与日常选择，它仍只是抽象的完整。</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="references-section">
+      <div>
+        <span>研究说明</span>
+        <p>
+          本站是一张比较性的人类思想地图，不是宗教学、哲学史或科学史教科书。
+          “同归”是一种编辑视角：以共同问题组织差异，而不声称不同传统拥有同一形上结论。
+        </p>
+      </div>
+      <div class="reference-links">
+        <a href="https://plato.stanford.edu/entries/scientific-method/" target="_blank" rel="noopener">Scientific Method · SEP ↗</a>
+        <a href="https://plato.stanford.edu/entries/mysticism/" target="_blank" rel="noopener">Mysticism · SEP ↗</a>
+        <a href="https://plato.stanford.edu/entries/beauty/" target="_blank" rel="noopener">Beauty · SEP ↗</a>
+        <a href="https://plato.stanford.edu/entries/ethics-chinese/" target="_blank" rel="noopener">Chinese Ethics · SEP ↗</a>
+        <a href="https://plato.stanford.edu/entries/alienation/" target="_blank" rel="noopener">Alienation · SEP ↗</a>
+        <a href="https://plato.stanford.edu/entries/ecology/" target="_blank" rel="noopener">Ecology · SEP ↗</a>
       </div>
     </section>
   </main>
-
-  <div class="timer-panel" id="timerPanel" hidden>
-    <span>静默 · SILENCE</span>
-    <strong id="timerDisplay">03:00</strong>
-    <p>不需要得到答案。只留意此刻有什么。</p>
-    <button id="timerCancel" type="button">结束</button>
-  </div>
 
   <footer class="site-footer">
     <blockquote>天下同归而殊涂，一致而百虑。</blockquote>
