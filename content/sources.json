@@ -1,0 +1,23 @@
+{
+  "method": {"title":"科学方法：实践、证据与可修正性","name":"Scientific Method","publisher":"Stanford Encyclopedia of Philosophy","type":"学术综述","url":"https://plato.stanford.edu/entries/scientific-method/","note":"用于认识科学方法的多样性，不把科学简化为单一的证伪步骤。"},
+  "comparative": {"title":"比较宗教哲学：相似问题不等于相同答案","name":"Comparative Philosophy of Religion","publisher":"Stanford Encyclopedia of Philosophy","type":"学术综述","url":"https://plato.stanford.edu/entries/religion-comparative/","note":"用于比较的范围、语境与概念边界。"},
+  "mysticism": {"title":"神秘主义：经验、诠释与联合的不同含义","name":"Mysticism","publisher":"Stanford Encyclopedia of Philosophy","type":"学术综述","url":"https://plato.stanford.edu/entries/mysticism/","note":"区分经验报告、神学解释与本体论同一；不是体验效果的临床证据。"},
+  "beauty": {"title":"美：一种有争议的价值","name":"Beauty","publisher":"Stanford Encyclopedia of Philosophy","type":"学术综述","url":"https://plato.stanford.edu/archives/fall2025/entries/beauty/","note":"主要讨论西方美学史，不能代表全部文化的审美理解。"},
+  "chinese": {"title":"中国伦理：修身、关系与政治","name":"Chinese Ethics","publisher":"Stanford Encyclopedia of Philosophy","type":"学术综述","url":"https://plato.stanford.edu/entries/ethics-chinese/","note":"关注儒、墨、道等思想的差别，避免把中国伦理写成一种声音。"},
+  "laozi": {"title":"老子：文本层累、自然与无为","name":"Laozi","publisher":"Stanford Encyclopedia of Philosophy","type":"学术综述","url":"https://plato.stanford.edu/entries/laozi/","note":"兼顾文本形成、不同注释传统与政治、修养层面的解释。"},
+  "buddha": {"title":"佛陀：苦、无我与解脱","name":"Buddha","publisher":"Stanford Encyclopedia of Philosophy","type":"学术综述","url":"https://plato.stanford.edu/archives/spr2024/entries/buddha/","note":"以早期佛教的哲学解释为主，不代表全部佛教流派。"},
+  "shankara": {"title":"商羯罗：不二吠檀多","name":"Śaṅkara","publisher":"Stanford Encyclopedia of Philosophy","type":"学术综述","url":"https://plato.stanford.edu/entries/shankara/","note":"梵我不二属于特定思想传统，不能泛指印度宗教。"},
+  "virtue": {"title":"德性伦理：成为怎样的人","name":"Virtue Ethics","publisher":"Stanford Encyclopedia of Philosophy","type":"学术综述","url":"https://plato.stanford.edu/entries/ethics-virtue/","note":"用于区分德性、规则、后果等不同伦理关注。"},
+  "alienation": {"title":"异化：什么样的分离才是问题","name":"Alienation","publisher":"Stanford Encyclopedia of Philosophy","type":"学术综述","url":"https://plato.stanford.edu/entries/alienation/","note":"分离不必然是异化；过度融合也可能成为问题。"},
+  "ecology": {"title":"生态学：相互作用、尺度与复杂性","name":"Ecology","publisher":"Stanford Encyclopedia of Philosophy","type":"学术综述","url":"https://plato.stanford.edu/entries/ecology/","note":"用于区分生态研究、系统解释和环境伦理，不把互依解释为形上同一。"},
+  "therapy": {"title":"心理治疗：目标、证据与专业边界","name":"Psychotherapies","publisher":"美国国家心理健康研究所 NIMH","type":"机构说明","url":"https://www.nimh.nih.gov/health/topics/psychotherapies","note":"心理治疗有多种方法；宗教体验、阅读和本网站练习不能替代个体化的专业评估。"},
+  "native": {"title":"原住民知识：从具体群体与当代声音进入","name":"Native Knowledge 360°","publisher":"史密森尼美国印第安人国家博物馆","type":"机构教育资源","url":"https://americanindian.si.edu/nk360","note":"提供具体文化、历史、艺术与知识实践的课程，不支持一种笼统的“原住民世界观”。"},
+  "landscape": {"title":"中国山水画：自然、心境与社会处境","name":"Landscape Painting in Chinese Art","publisher":"大都会艺术博物馆 · 亚洲艺术部","type":"机构研究","url":"https://www.metmuseum.org/essays/landscape-painting-in-chinese-art","note":"山水不只是外在风景，也涉及人格表达与历史处境。"},
+  "silk": {"title":"丝绸之路：多条路线上的知识与思想交流","name":"丝绸时代的故事","publisher":"联合国教科文组织《信使》","type":"机构研究","url":"https://courier.unesco.org/zh/articles/sichoushidaidegushi","note":"用于说明海陆交通中的双向交流，而非单一文明向外输出。"},
+  "timbuktu": {"title":"廷巴克图：西非的知识与精神生活","name":"Timbuktu","publisher":"联合国教科文组织世界遗产中心","type":"机构研究","url":"https://whc.unesco.org/en/list/119/","note":"关注十五至十六世纪的学术与宗教中心；不将其称为西非唯一知识传统。"},
+  "akan": {"title":"阿坎的人格观：个体与共同体之间的争论","name":"Akan Philosophy of the Person","publisher":"Stanford Encyclopedia of Philosophy","type":"学术综述","url":"https://plato.stanford.edu/entries/akan-person/","note":"Wiredu 与 Gyekye 的差异提醒我们，关系性人格并不意味着取消个体。"},
+  "john": {"title":"《约翰福音》第十七章","name":"John 17","publisher":"美国天主教主教团 · 圣经文本","type":"原典译本","url":"https://bible.usccb.org/bible/john/17","note":"联合、爱与群体的经文语境；具体神学解释仍须区分传统。"},
+  "quran": {"title":"《古兰经》49:13：族群差异与相识","name":"Al-Hujurat 49:13","publisher":"Quran.com · 经文与译注","type":"原典译本","url":"https://quran.com/al-hujurat/13","note":"一个具体的经文入口，不以单一节经文概括全部伊斯兰思想。"},
+  "udhr": {"title":"《世界人权宣言》","name":"Universal Declaration of Human Rights","publisher":"联合国","type":"原始文献","url":"https://www.un.org/en/about-us/universal-declaration-of-human-rights","note":"1948 年文件；区分共同标准的提出和实际落实。"},
+  "chauvet": {"title":"肖维岩洞：史前图像的物质证据","name":"Decorated Cave of Pont d’Arc","publisher":"联合国教科文组织世界遗产中心","type":"机构研究","url":"https://whc.unesco.org/en/list/1426/","note":"支持史前艺术存在的事实；不能据此确认创作者全部信仰或心理体验。"}
+}
