@@ -1,0 +1,50 @@
+{
+  "checked": "2026-10-05",
+  "images": [
+    {
+      "id": "pale-dot",
+      "file": "assets/media/pale-dot.jpg",
+      "bytes": 84842,
+      "sha256": "b68d8aca8c1ca391541db83274a4acd2f5640ba5b4d56e3e50b06ebcfb772b90",
+      "source": "https://assets.science.nasa.gov/dynamicimage/assets/science/psd/photojournal/pia/pia23/pia23645/PIA23645.jpg?fit=clip&w=1500",
+      "rights": "公共领域；署名 NASA/JPL-Caltech",
+      "rights_url": "https://www.usgs.gov/media/images/pale-blue-dotpng"
+    },
+    {
+      "id": "pavilion",
+      "file": "assets/media/pavilion.jpg",
+      "bytes": 328718,
+      "sha256": "ce6678ad388cf40d9a82ee7dce83262c4be454364d0785c8e9ce61a166572748",
+      "source": "https://images.metmuseum.org/CRDImages/as/web-large/DP160429.jpg",
+      "rights": "The Met Open Access · CC0 / Public Domain",
+      "rights_url": "https://www.metmuseum.org/art/collection/search/44702"
+    },
+    {
+      "id": "wave",
+      "file": "assets/media/wave.jpg",
+      "bytes": 166452,
+      "sha256": "b76ccf0710b8e4b32e778a45e5398a0cf4777994523116f994a0430f4ee6a841",
+      "source": "https://images.metmuseum.org/CRDImages/as/web-large/DP130155.jpg",
+      "rights": "The Met Open Access · CC0 / Public Domain",
+      "rights_url": "https://www.metmuseum.org/art/collection/search/45434"
+    },
+    {
+      "id": "astrolabe",
+      "file": "assets/media/astrolabe.jpg",
+      "bytes": 56563,
+      "sha256": "4a7c80c525f478d555762e307c70076c5cf15abed29379eeb59a5a58adcee07f",
+      "source": "https://images.metmuseum.org/CRDImages/is/web-large/DP170386.jpg",
+      "rights": "The Met Open Access · CC0 / Public Domain",
+      "rights_url": "https://www.metmuseum.org/art/collection/search/444408"
+    },
+    {
+      "id": "cypresses",
+      "file": "assets/media/cypresses.jpg",
+      "bytes": 221383,
+      "sha256": "af0e3486621c210b54932d055294051b5601aa3362af4b84ab97e2831f8163bc",
+      "source": "https://images.metmuseum.org/CRDImages/ep/web-large/DP-42549-001.jpg",
+      "rights": "The Met Open Access · CC0 / Public Domain",
+      "rights_url": "https://www.metmuseum.org/art/collection/search/436535"
+    }
+  ]
+}

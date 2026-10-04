@@ -1,11 +1,11 @@
 {
   "name": "ways-home",
   "private": true,
-  "version": "3.0.0",
+  "version": "4.0.0",
   "description": "Tonggui: an open atlas of human inquiry",
   "scripts": {
     "build": "python3 scripts/build.py",
-    "check": "node --check app.js && python3 scripts/check.py",
+    "check": "node --check app.js && node --check assets/enrich.js && python3 scripts/check.py",
     "test": "playwright test",
     "preview": "python3 scripts/serve.py --port 8785"
   },

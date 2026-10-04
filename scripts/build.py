@@ -2,7 +2,7 @@
 """Build the complete, dependency-free static website from editorial JSON.
 
 Run from any directory: python3 scripts/build.py
-Generated HTML is committed so GitHub Pages can publish main / (root).
+Generated HTML is committed and published through the existing gh-pages branch.
 """
 from __future__ import annotations
 
@@ -10,19 +10,27 @@ import hashlib
 import html
 import json
 import re
+import sys
 from pathlib import Path
 from xml.sax.saxutils import escape as xml_escape
+from enrichment import RichContent
 
 ROOT = Path(__file__).resolve().parents[1]
 BASE_URL = "https://choosemiracle.github.io/ways.home/"
 SOURCES = json.loads((ROOT / "content/sources.json").read_text(encoding="utf-8"))
+SOURCES.update(json.loads((ROOT / "content/sources-extra.json").read_text(encoding="utf-8")))
 ROADS = json.loads((ROOT / "content/atlas.json").read_text(encoding="utf-8"))
 CHAPTERS = json.loads((ROOT / "content/chapters.json").read_text(encoding="utf-8"))
+DEPTH = json.loads((ROOT / "content/depth.json").read_text(encoding="utf-8"))
+for road in ROADS:
+    road['sections'].extend(DEPTH['road_updates'][road['id']]['sections'])
+CHAPTERS['encounters'].extend(DEPTH['encounters'])
+CHAPTERS['traditions'].extend(DEPTH['traditions'])
 ROAD_BY_ID = {r["id"]: r for r in ROADS}
 REF_NUM = {key: i + 1 for i, key in enumerate(SOURCES)}
 LENSES = {q["id"]: q for q in CHAPTERS["questions"]}
 PAGES: list[dict] = []
-VERSION = hashlib.sha256(b"".join((ROOT / f).read_bytes() for f in ("styles.css", "app.js"))).hexdigest()[:10]
+VERSION = hashlib.sha256(b"".join((ROOT / f).read_bytes() for f in ("styles.css", "app.js", "assets/enrich.css", "assets/enrich.js"))).hexdigest()[:10]
 
 
 def esc(value: object) -> str:
@@ -35,6 +43,8 @@ def prefix(path: str) -> str:
 
 def refs(keys: list[str], pre: str = "") -> str:
     return "".join(f'<a class="citation" href="{pre}sources.html#{esc(k)}" title="{esc(SOURCES[k]["title"])}" aria-label="来源 {REF_NUM[k]}：{esc(SOURCES[k]["title"])}">[{REF_NUM[k]}]</a>' for k in keys)
+
+RICH = RichContent(ROOT, SOURCES, DEPTH, refs)
 
 
 def link(url: str, label: str, style: str = "text-link") -> str:
@@ -63,7 +73,11 @@ def article_sections(sections: list[dict], pre: str) -> str:
     for i, section in enumerate(sections, 1):
         source_ids = section.get("refs", [])
         badge = "阅读与辨析" if source_ids else "本站阐释"
-        output.append(f'''<section class="article-section" id="part-{i}"><p class="eyebrow">{i:02d} / {badge}</p><h2>{esc(section['title'])}</h2><p>{esc(section['text'])}{refs(source_ids, pre)}</p></section>''')
+        paragraphs = section['text'].split('\n\n')
+        prose = ''.join('<p>'+esc(text)+(refs(source_ids,pre) if j==len(paragraphs)-1 else '')+'</p>' for j,text in enumerate(paragraphs))
+        visual = RICH.image(section['image'],pre) if section.get('image') else ''
+        visual += RICH.diagram(section['diagram']) if section.get('diagram') else ''
+        output.append(f'''<section class="article-section" id="part-{i}"><p class="eyebrow">{i:02d} / {badge}</p><h2>{esc(section['title'])}</h2>{prose}{visual}</section>''')
     return "".join(output)
 
 
@@ -111,20 +125,21 @@ def landscape() -> str:
 
 def page(path: str, title: str, description: str, body: str, active: str = "", kind: str = "专题") -> None:
     pre = '/ways.home/' if path == '404.html' else prefix(path)
-    nav_items = [("index.html", "起点", "home"), ("atlas.html", "探索图谱", "atlas"), ("encounters.html", "文明交汇", "encounters"), ("unity.html", "合一诸义", "unity"), ("practice.html", "回到日常", "practice")]
+    nav_items = [("index.html", "起点", "home"), ("atlas.html", "探索图谱", "atlas"), ("studies.html", "深读", "studies"), ("encounters.html", "文明交汇", "encounters"), ("unity.html", "合一诸义", "unity"), ("media.html", "视听", "media"), ("practice.html", "回到日常", "practice")]
     nav = "".join(f'<a href="{pre}{url}"{ " aria-current=\"page\"" if key == active else ""}>{label}</a>' for url, label, key in nav_items)
     doc = f'''<!doctype html>
 <html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#f4f0e7">
 <title>{esc(title)} · 同归 WAYS HOME</title><meta name="description" content="{esc(description)}"><link rel="canonical" href="{BASE_URL}{path}">
 <meta property="og:title" content="{esc(title)} · 同归"><meta property="og:description" content="{esc(description)}"><meta property="og:type" content="website"><meta property="og:url" content="{BASE_URL}{path}">
-<link rel="icon" href="{pre}assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="{pre}styles.css?v={VERSION}"><script>document.documentElement.classList.add('js');</script><script src="{pre}app.js?v={VERSION}" defer></script></head>
+<link rel="icon" href="{pre}assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="{pre}styles.css?v={VERSION}"><link rel="stylesheet" href="{pre}assets/enrich.css?v={VERSION}"><script>document.documentElement.classList.add('js');</script><script src="{pre}app.js?v={VERSION}" defer></script><script src="{pre}assets/enrich.js?v={VERSION}" defer></script></head>
 <body data-base="{pre}" data-page="{esc(path)}"><a class="skip-link" href="#main">跳到正文</a>
 <header class="site-header"><div class="shell header-inner"><a class="brand" href="{pre}index.html" aria-label="同归首页"><span class="brand-seal" aria-hidden="true">归</span><span><b>同归</b><small>WAYS HOME</small></span></a>
 <nav class="primary-nav" id="primary-nav" aria-label="主导航">{nav}</nav><div class="header-actions"><button class="icon-button js-only" data-search-open aria-label="搜索全站"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10" cy="10" r="6.5"/><path d="m15 15 6 6"/></svg><span>搜索</span></button><button class="menu-button js-only" aria-expanded="false" aria-controls="primary-nav">目录</button></div></div></header>
 <div class="reading-progress" aria-hidden="true"><span></span></div><main id="main">{body}</main>
-<div class="shell end-nav"><a href="{pre}essay.html">关于同归</a><a href="{pre}sources.html">来源与边界</a><a href="{pre}atlas.html">打开整张图谱</a><a href="#main" class="back-top">回到页首 ↑</a></div>
+<div class="shell end-nav"><a href="{pre}essay.html">关于同归</a><a href="{pre}sources.html">来源与边界</a><a href="{pre}studies.html">深读专题</a><a href="{pre}media.html">图像与视听</a><a href="{pre}applications.html">应用工坊</a><a href="#main" class="back-top">回到页首 ↑</a></div>
 <footer class="site-footer"><blockquote>天下同归而殊涂，一致而百虑。</blockquote><p>《周易 · 系辞下》</p></footer>
 <dialog class="search-dialog" id="search-dialog" aria-labelledby="search-title"><div class="dialog-head"><h2 id="search-title">在图谱中寻找</h2><button class="icon-button" data-search-close aria-label="关闭搜索">关闭 ×</button></div><label for="site-search" class="small">输入问题、传统或方法，例如“无我”“艺术”“边界”</label><input id="site-search" type="search" placeholder="你正在寻找什么？" autocomplete="off"><p class="small muted" id="search-status" role="status">搜索本站文章与来源，不查询外部网站。</p><div id="search-results" class="search-results"></div><p class="small muted search-tip">⌘ / Ctrl + K 打开搜索 · Esc 返回阅读</p></dialog>
+{RICH.lightbox_dialog()}
 </body></html>'''
     target = ROOT / path
     target.parent.mkdir(parents=True, exist_ok=True)
@@ -143,7 +158,9 @@ def build_home() -> None:
 <section class="encounter-band"><div class="shell section"><div class="split-heading">{heading('03 / 文明交汇', '世界思想，<br>从来不止一个中心。', '从具体的文本、地点和知识实践进入；不把历史画成一条文明等级的阶梯。')}{link('encounters.html','沿十二个历史切面阅读')}</div><div class="encounter-preview"><a href="encounters.html#silk"><span class="eyebrow">欧亚交流</span><h3>思想也走过<br>海陆之间的路。</h3><p>知识在迁移与翻译中，获得新的解释。</p><span aria-hidden="true">↗</span></a><a href="encounters.html#timbuktu"><span class="eyebrow">西非 · 廷巴克图</span><h3>把另一座<br>知识之城放进地图。</h3><p>学习、文本与精神生活彼此交织。</p><span aria-hidden="true">↗</span></a><a href="encounters.html#living"><span class="eyebrow">美洲原住民</span><h3>活着的文化，<br>仍在表达自己。</h3><p>从当代的艺术、教育与生活听起。</p><span aria-hidden="true">↗</span></a></div><p class="small muted">历史入口的依据：{refs(['silk','timbuktu','native'])}</p></div></section>
 <section class="shell section unity-teaser"><div class="large-glyph" aria-hidden="true">辨</div><div>{heading('04 / 合一诸义', '同一个词，<br>可能在说不同的事情。', '关系中的和谐、人格的整合、理论的统一与宗教中的不二，不在同一个层面。先辨明差别，再谈彼此照亮。')}{local_button('unity.html','选择两个入口并读',True)}</div></section>
 <section class="shell practice-invitation"><div><span class="eyebrow">05 / 回到日常</span><h2>读过之后，<br>让一个小动作发生。</h2><p>辨认一次判断，听完一个人，或在一件作品前多停留三分钟。</p></div><div class="practice-invitation-links"><a href="practice.html#pause"><span>一分钟</span>先停一下 <b>→</b></a><a href="practice.html#look"><span>三分钟</span>重新观看 <b>→</b></a><a href="practice.html#listen"><span>六分钟</span>轮流聆听 <b>→</b></a></div></section>'''
-    page('index.html','人类探索的开放图谱','从真、善、美、归出发，阅读九种探索道路，比较不同的完整观，并把问题带回生活。',body,'home','起点')
+    body = body.replace('<section class="shell section route-index">', RICH.home_feature()+'<section class="shell section route-index">')
+    body = body.replace('沿十二个历史切面阅读','沿十五个历史切面阅读')
+    page('index.html','人类探索的开放图谱','从真、善、美、归出发，阅读探索道路、深度论述与图像视频，再把问题带回日常实践。',body,'home','起点')
 
 
 def build_atlas() -> None:
@@ -158,6 +175,7 @@ def build_atlas() -> None:
         body += '<div class="shell article-layout">' + toc(r['sections']) + '<article class="reading-column">'
         body += '<div class="method-strip">' + ''.join(f'<span>{esc(m)}</span>' for m in r['methods']) + '</div>'
         body += article_sections(r['sections'],pre)
+        body += RICH.pathway_addon(r['id'],pre)
         body += f'''<section class="criteria-grid"><div><span class="eyebrow">怎样检验</span><p>{esc(r['knowledge'])}</p></div><div><span class="eyebrow">这里的回归</span><p>{esc(r['return'])}</p></div></section>'''
         body += note('需要保留的张力',r['tension'],True)
         body += f'<section class="article-section"><span class="eyebrow">本站设计 / 带回生活</span><h2>今天可以试的一件小事</h2><p>{esc(r["practice"])}</p>{local_button("../practice.html","进入日常练习")}</section></article></div>'
@@ -178,14 +196,15 @@ def build_questions() -> None:
 
 
 def build_encounters() -> None:
-    body = page_hero('文明交汇 / ENCOUNTERS','许多地方，都在提出自己的问题。','这里选取十二个历史与当代切面：不是完整世界史，不是文明等级，也不把某个传统概括为一个静止的答案。','流')
+    body = page_hero('文明交汇 / ENCOUNTERS','许多地方，都在提出自己的问题。','这里选取十五个历史与当代切面：不是完整世界史，不是文明等级，也不把某个传统概括为一个静止的答案。','流')
     regions = list(dict.fromkeys(x['region'] for x in CHAPTERS['encounters']))
     options = '<option value="all">全部地区与网络</option>' + ''.join(f'<option value="{esc(r)}">{esc(r)}</option>' for r in regions)
-    body += f'''<section class="shell encounter-section">{note('怎样阅读时间','有些节点是一处遗址，有些是一段漫长的解释传统。时间标签用于定位语境，不是在宣布思想的唯一起源。')}<div class="filter-toolbar js-only"><label>选择一个地区或交流网络<select id="region-filter">{options}</select></label><span class="small muted" role="status" id="encounter-count">12 个切面</span></div><div class="encounter-list">'''
+    body += f'''<section class="shell encounter-section">{note('怎样阅读时间','有些节点是一处遗址，有些是一段漫长的解释传统。时间标签用于定位语境，不是在宣布思想的唯一起源。')}<div class="filter-toolbar js-only"><label>选择一个地区或交流网络<select id="region-filter">{options}</select></label><span class="small muted" role="status" id="encounter-count">{len(CHAPTERS['encounters'])} 个切面</span></div><div class="encounter-list">'''
     for i, e in enumerate(CHAPTERS['encounters'],1):
-        body += f'''<article class="encounter-item" id="{e['id']}" data-region="{esc(e['region'])}"><div class="encounter-date"><span>{i:02d}</span><p>{esc(e['date'])}</p><small>{esc(e['region'])}</small></div><div><h2>{esc(e['title'])}</h2><p>{esc(e['text'])}{refs(e['refs'])}</p><p class="encounter-insight"><span>由此提问</span>{esc(e['insight'])}</p></div></article>'''
+        visual=RICH.image(e['image']) if e.get('image') else ''
+        body += f'''<article class="encounter-item" id="{e['id']}" data-region="{esc(e['region'])}"><div class="encounter-date"><span>{i:02d}</span><p>{esc(e['date'])}</p><small>{esc(e['region'])}</small></div><div><h2>{esc(e['title'])}</h2><p>{esc(e['text'])}{refs(e['refs'])}</p>{visual}<p class="encounter-insight"><span>由此提问</span>{esc(e['insight'])}</p></div></article>'''
     body += '</div>' + note('地图还没有画完','本版尚未系统展开犹太思想、耆那教、锡克教、伊斯兰科学史、东南亚与大洋洲诸传统等。遗漏不表示它们不重要；首批入口应继续接受补充和校正。') + '</section>'
-    page('encounters.html','文明交汇','从十二个具体的文本、地点与知识实践，认识不同文化的探索与往返。',body,'encounters','历史切面')
+    page('encounters.html','文明交汇','从十五个具体的文本、地点与知识实践，认识不同文化的探索与往返。',body,'encounters','历史切面')
 
 
 def tradition_content(t: dict) -> str:
@@ -200,7 +219,9 @@ def build_unity() -> None:
     for t in ts:
         body += f'<details id="{t["id"]}"><summary><span>{esc(t["name"])}</span><strong>{esc(t["term"])}</strong><b aria-hidden="true">＋</b></summary><div class="tradition-body">{tradition_content(t)}</div></details>'
     body += '</div></section><div hidden id="tradition-templates">' + ''.join(f'<template data-tradition="{t["id"]}">{tradition_content(t)}</template>' for t in ts) + '</div>'
-    page('unity.html','合一诸义','并排比较十种完整、联合、解脱与统一的语境，保留来源与区别。',body,'unity','比较')
+    body=body.replace('十种不同的语境','十四种不同的语境')
+    body+='<section class="shell section">'+RICH.diagram('levels')+local_button('studies/one-and-many.html','深入阅读：我们说合一时在说什么')+'</section>'
+    page('unity.html','合一诸义','并排比较十四种完整、联合、解脱与统一的语境，保留来源与区别。',body,'unity','比较')
 
 
 def build_practice() -> None:
@@ -209,7 +230,8 @@ def build_practice() -> None:
     for p in CHAPTERS['practices']:
         body += f'''<article class="practice-card" id="{p['id']}"><div class="road-top"><p class="eyebrow">{esc(p['label'])}</p><span class="small-glyph" aria-hidden="true">{p['char']}</span></div><h2>{esc(p['title'])}</h2><p>{esc(p['text'])}</p><ol>{''.join(f'<li>{esc(s)}</li>' for s in p['steps'])}</ol><p class="practice-prompt">{esc(p['prompt'])}</p><button class="button js-only" data-practice="{p['id']}" data-duration="{p['duration']}" data-title="{esc(p['title'])}" data-prompt="{esc(p['prompt'])}">打开计时与书写 →</button><p class="no-js-note small muted">关闭脚本时，可以自行计时，照着上面的步骤进行。</p></article>'''
     body += '''</div></section><dialog class="practice-dialog" id="practice-dialog" aria-labelledby="practice-title"><div class="dialog-head"><span class="eyebrow">留一段时间给此刻</span><button class="icon-button" id="practice-close">结束并返回 ×</button></div><h2 id="practice-title">先留一分钟</h2><p id="practice-question"></p><div class="timer-face" id="timer-face" aria-hidden="true">01:00</div><p id="timer-status" class="small" role="status">准备好了，再开始。</p><div class="timer-actions"><button class="button primary" id="timer-toggle">开始</button><button class="text-button" id="timer-reset">重新计时</button></div><div class="notes-area"><label for="practice-note">留下一点自己的记录</label><textarea id="practice-note" rows="4" placeholder="可以只写一句，也可以保持空白。"></textarea><p class="small muted">不会自动保存。点击保存后，只写入当前浏览器的网站存储，不上传；共享设备请谨慎使用，清理浏览器数据会丢失记录。</p><div class="note-actions"><button class="text-button" id="note-save">保存在此浏览器</button><button class="text-button" id="note-export">导出文字</button><button class="text-button" id="note-clear">清除此项记录</button></div><p id="note-status" class="small muted" role="status"></p></div></dialog>'''
-    page('practice.html','回到日常','六种自愿、低强度的观察、聆听与书写练习。',body,'practice','实践')
+    body+=RICH.applications_link()
+    page('practice.html','回到日常','六种自愿、低强度的观察、聆听与书写练习，以及通往应用工坊的入口。',body,'practice','实践')
 
 
 def build_essay() -> None:
@@ -222,14 +244,14 @@ def build_essay() -> None:
 def build_sources() -> None:
     body = page_hero('来源与边界 / READING ROOM','每一种理解，都应当有来处。','这里区分原典、学术综述、机构研究与本站阐释。来源让论述可以被追问，而不是把某个名字变成不容质疑的权威。','读')
     body += '<section class="shell sources-page"><div class="policy-grid">'
-    policies = [('事实与阐释分开','有出处的历史、概念论述附上编号。标为“本站阐释”的段落，是一种可被质疑的解释或伦理主张，不冒充原作者原话。'),('转述不冒充引文','页面以中文概述为主，不以引号制造伪金句。译本、综述和原典各有不同的证明能力。'),('范围不冒充全貌','九条路径与十二个切面是首批选题；没有覆盖全部思想、文化与流派。每个比较条目只代表明示的语境。'),('隐私与实践边界','无账号、无追踪统计，不上传练习文字。主动保存使用本浏览器存储，可导出或清除。练习不提供诊断或疗效承诺。')]
+    policies = [('事实与阐释分开','有出处的历史、概念论述附上编号。标为“本站阐释”的段落，是一种可被质疑的解释或伦理主张，不冒充原作者原话。深读中的假设案例与应用流程明确标为本站设计。'),('图像与视频保留来处','图像使用公共领域或馆方开放授权材料，保留署名、作品资料与使用依据。视频只引用原平台；中文导读不是字幕翻译。资料不能替代论证。'),('范围不冒充全貌','九条路径与十五个切面不是全部人类思想史。比较条目只代表明示语境；新增论述保留反对意见，不把框架写成已被证明的统一结论。'),('隐私与实践边界','本站无账号、无追踪统计，不上传练习文字。主动保存仅使用本浏览器。视频在读者同意后才连接外部平台，届时适用平台隐私规则。练习不提供诊断或疗效承诺。')]
     body += ''.join(f'<article><h2>{a}</h2><p>{b}</p></article>' for a,b in policies) + '</div>'
-    body += '<div class="filter-toolbar js-only"><label class="filter-search">查找阅读来源<input type="search" id="source-query" placeholder="标题、机构或关键词"></label><span class="small muted" id="source-count" role="status">21 项来源</span></div><div class="source-list">'
+    body += f'<div class="filter-toolbar js-only"><label class="filter-search">查找阅读来源<input type="search" id="source-query" placeholder="标题、机构或关键词"></label><span class="small muted" id="source-count" role="status">{len(SOURCES)} 项来源</span></div><div class="source-list">'
     for k, s in SOURCES.items():
         searchable = ' '.join(str(v) for v in s.values())
         body += f'''<article id="{k}" class="source-entry" data-source data-search="{esc(searchable)}"><span class="source-number">{REF_NUM[k]:02d}</span><div><p class="eyebrow">{esc(s['type'])} / {esc(s['publisher'])}</p><h2><a href="{esc(s['url'])}" target="_blank" rel="noopener noreferrer">{esc(s['title'])}<span aria-hidden="true"> ↗</span></a></h2><p class="source-original">{esc(s['name'])}</p><p>{esc(s['note'])}</p></div></article>'''
     body += '</div><p id="source-empty" class="empty-state" hidden>没有匹配的来源。试试更简短的词。</p>' + note('关于原典与证据','圣经、古兰经等链接用于辨认文本本身及其语境，不作为科学或临床证据。研究综述也有范围与观点上的限制；与某个来源对话，不等于认可它的一切结论。') + '</section>'
-    page('sources.html','来源与边界','二十一项阅读来源、编辑原则、隐私说明与实践边界。',body,kind='阅读室')
+    page('sources.html','来源与边界',f'{len(SOURCES)} 项阅读与视听来源、编辑原则、隐私说明与实践边界。',body,kind='阅读室')
 
 
 def validate_content() -> None:
@@ -265,6 +287,7 @@ def main() -> None:
     build_practice()
     build_essay()
     build_sources()
+    RICH.build_all(sys.modules[__name__])
     search_pages = list(PAGES)
     (ROOT / 'assets/search-index.json').write_text(json.dumps(search_pages, ensure_ascii=False), encoding='utf-8')
     page('404.html','这里暂时没有这条路径','返回同归，重新选择一个入口。',page_hero('404 / 未找到页面','不妨换一条路。','这个地址没有对应页面，内容可能已经移动。','归',pre='/ways.home/')+'<div class="shell section"><a class="button primary" href="/ways.home/index.html">回到同归首页 →</a></div>')
