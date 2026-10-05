@@ -1,80 +1,62 @@
 {
   "sources": {
-    "return-bliss": {"title":"坎贝尔：追随热爱，不只是追逐兴奋","name":"Joseph Campbell’s Advice to Follow Your Bliss","publisher":"Joseph Campbell Foundation","type":"基金会整理的原文与访谈","url":"https://www.jcf.org/learn/joseph-campbell-follow-your-bliss","note":"区分持续的生命热情与短暂快感，并保留责任与理性的考虑。本站四重视角不是坎贝尔提出的阶段模型。"},
-    "return-hero": {"title":"英雄之旅：出发、历练与归来","name":"Joseph Campbell and the Hero’s Journey","publisher":"Joseph Campbell Foundation","type":"原著引文与框架说明","url":"https://www.jcf.org/learn/joseph-campbell-heros-journey","note":"英雄之旅包括带着所得回到人群。它是神话阅读框架，不是每个人必须依次通过的成长测验。"},
-    "return-koe": {"title":"丹·科：从细分定位转向独特视角","name":"You don’t need a niche, you need a point of view","publisher":"Dan Koe","type":"作者文章","url":"https://thedankoe.com/letters/you-dont-need-a-niche-you-need-a-point-of-view/","note":"2025 年 7 月 31 日文章，语境是创作、个人事业与传播。本模块借用其表达视角，不把商业定位当成人的本体身份，也不背书文章的全部论断。"},
-    "return-palmer": {"title":"帕尔默：让生命发声，聆听禀赋与限度","name":"Let Your Life Speak: Listening for the Voice of Vocation","publisher":"Parker J. Palmer / Wiley","type":"出版社图书介绍与原文节选","url":"https://books.wiley.com/titles/9780787947354/","note":"聆听真实生命既包括潜能，也包括限制。书名不等于毫无辨识地顺从每一次冲动；本站练习是另行设计的。"},
-    "return-self": {"title":"《奇迹课程》第95课：身份与合一","name":"Workbook Lesson 95: I am one Self, united with my Creator","publisher":"Foundation for Inner Peace","type":"授权在线原典","url":"https://lessons.acim.org/en/chapters/lesson-95","note":"这一课在其神学语境中讨论上主所创造的身份。“你甚至不是那个故事”是本模块的意译性概括，并非经核对的逐字引文。"},
-    "return-use": {"title":"《奇迹课程》第199课：身份与用途","name":"Workbook Lesson 199: I am not a body. I am free","publisher":"Foundation for Inner Peace","type":"授权在线原典","url":"https://lessons.acim.org/en/chapters/lesson-199","note":"在课程信仰框架中理解身份、身体与服务目的；本站不将其用作取消身体照顾、治疗或现实责任的依据。"},
-    "return-teacher": {"title":"《教师指南》第一节：谁是上主之师","name":"A Course in Miracles, Manual for Teachers, Section 1","publisher":"A Course in Miracles / Wikisource 原典转录","type":"原典公开转录","url":"https://en.wikisource.org/wiki/A_Course_in_Miracles/Manual_for_Teachers/Who_Are_God%27s_Teachers%3F","note":"第一节强调不再把自己的利益与他人的利益看成分离。FIP 官方正文访问受限时，以可检索的原典转录核对章节；这不是授予读者神圣身份或权威的凭证。"}
+    "return-bliss": {"title":"坎贝尔：追随热爱，不只是追逐兴奋","name":"Joseph Campbell’s Advice to Follow Your Bliss","publisher":"Joseph Campbell Foundation","type":"基金会整理的原文与访谈","url":"https://www.jcf.org/learn/joseph-campbell-follow-your-bliss","note":"区分持续投入的热情与短暂刺激，兼顾理性与责任。本站的四重功课不是坎贝尔提出的阶段模型。"},
+    "return-hero": {"title":"英雄之旅：出发、历练与归来","name":"Joseph Campbell and the Hero’s Journey","publisher":"Joseph Campbell Foundation","type":"原著引文与框架说明","url":"https://www.jcf.org/learn/joseph-campbell-heros-journey","note":"包含把所得带回共同生活的归来；不是每个人必须依次通过的成长测验，也不能把坎贝尔当成低阶起点。"},
+    "return-koe": {"title":"丹·科：从细分定位转向独特视角","name":"You don’t need a niche, you need a point of view","publisher":"Dan Koe","type":"作者文章","url":"https://thedankoe.com/letters/you-dont-need-a-niche-you-need-a-point-of-view/","note":"语境是创作、个人事业与传播。本模块借用表达方法，不把商业定位当成人的本体身份或必经的修行阶段。"},
+    "return-palmer": {"title":"帕尔默：让生命发声，聆听禀赋与限度","name":"Let Your Life Speak: Listening for the Voice of Vocation","publisher":"Parker J. Palmer / Wiley","type":"出版社介绍与原文节选","url":"https://books.wiley.com/titles/9780787947354/","note":"召唤来自聆听与接纳，包括潜能和限度。本站把聆听放在表达之前，是编辑安排，不是作者建立的四阶段理论。"},
+    "return-self": {"title":"《奇迹课程》第95课：身份与合一","name":"Workbook Lesson 95: I am one Self, united with my Creator","publisher":"Foundation for Inner Peace","type":"授权在线原典","url":"https://lessons.acim.org/en/chapters/lesson-95","note":"第1段讨论课程神学中的身份；第7—9段谈遗漏练习后的返回与纠正，不以失误惩罚自己。“你甚至不是那个故事”是本站概括，不是逐字引文。"},
+    "return-use": {"title":"《奇迹课程》第199课：身份与用途","name":"Workbook Lesson 199: I am not a body. I am free","publisher":"Foundation for Inner Peace","type":"授权在线原典","url":"https://lessons.acim.org/en/chapters/lesson-199","note":"在课程的神学语境中讨论身份和身体的用途；不作为否认身体照顾、现实责任或专业帮助的理由。"},
+    "return-teacher": {"title":"《教师指南》第一节：谁是上主之师","name":"Manual for Teachers, M-1: Who Are God’s Teachers?","publisher":"Miracle Distribution Center / ACIM 原典","type":"原典公开转录","url":"https://www.miraclecenter.org/a-course-in-miracles/M-1.php","note":"本次核对第1—4段：共同利益的选择、宗教背景的多样性，以及本指南属于某种特定课程形式。不是教师资格认证。"},
+    "return-discernment": {"title":"依纳爵传统：神慰不等于感觉良好","name":"The Difference Between Consolation and Feeling Good","publisher":"IgnatianSpirituality.com / Loyola Press","type":"传统内部的实践阐释","url":"https://www.ignatianspirituality.com/making-good-decisions/discernment-of-spirits/the-difference-between-consolation-and-feeling-good/","note":"帮助区分情绪愉快与内在方向。本站只借作辨识的参照，不声称其与帕尔默或课程拥有相同神学。"},
+    "return-care": {"title":"梅村正念训练：照顾痛苦与真实生活","name":"The Fourteen Mindfulness Trainings","publisher":"Plum Village","type":"传统的公开实践文本","url":"https://plumvillage.org/mindfulness/the-14-mindfulness-trainings","note":"参照照顾痛苦、开放与正念生活的内容；不把正念训练缩减为普遍疗法，也不把痛苦神圣化。"},
+    "return-purpose": {"title":"《奇迹课程》第25课：重新认识用途","name":"Workbook Lesson 25: I do not know what anything is for","publisher":"Foundation for Inner Peace","type":"授权在线原典","url":"https://lessons.acim.org/en/chapters/lesson-25","note":"第4段区分电话的表面用途与联系他人的目的。本站活动案例是应用性推演，不是原课的替代练习。"},
+    "return-correction": {"title":"《教师指南》第18节：更正自己的观看","name":"Manual for Teachers, M-18: How Is Correction Made?","publisher":"Miracle Distribution Center / ACIM 原典","type":"原典公开转录","url":"https://www.miraclecenter.org/a-course-in-miracles/M-18.php","note":"重点核对第4段关于接受纠正及为自己接受 Atonement 的说明。本站使用“救赎／纠正”的解释，不将其缩减为认知技巧。"},
+    "return-judgment": {"title":"《教师指南》第10节：放下终极裁断","name":"Manual for Teachers, M-10: How Is Judgment Relinquished?","publisher":"Miracle Distribution Center / ACIM 原典","type":"原典公开转录","url":"https://www.miraclecenter.org/a-course-in-miracles/M-10.php","note":"第2—4段谈个体不具备全知判断，以及依赖圣灵。核实信息、尊重拒绝是本站实践边界，不冒充原典的全部理论。"},
+    "return-life": {"title":"《教师指南》第9节：外在生活与内在转变","name":"Manual for Teachers, M-9: Are Changes Required in the Life Situation of God’s Teachers?","publisher":"Miracle Distribution Center / ACIM 原典","type":"原典公开转录","url":"https://www.miraclecenter.org/a-course-in-miracles/M-9.php","note":"内在转变不必对应同一种外在生活变化；没有规定每个人都需离职、迁居或建立个人事业。"},
+    "return-forgive": {"title":"《奇迹课程》第134课：宽恕与撤回定罪","name":"Workbook Lesson 134: Let me perceive forgiveness as it is","publisher":"Foundation for Inner Peace","type":"授权在线原典","url":"https://lessons.acim.org/en/chapters/lesson-134","note":"区分课程中关于罪咎与真实的形上主张、一般情绪释怀，以及本站维护安全与问责的伦理约定。"},
+    "return-receive": {"title":"《奇迹课程》第154课：给予之前，也愿意接受","name":"Workbook Lesson 154: I am among the ministers of God","publisher":"Foundation for Inner Peace","type":"授权在线原典","url":"https://lessons.acim.org/en/chapters/lesson-154","note":"第1段同时反对傲慢与虚假谦卑；第6—7段谈传讯者首先也是讯息的接受者。不是替天发言的个人授权。"},
+    "return-brother": {"title":"《奇迹课程》第161课：从一个具体的人开始","name":"Workbook Lesson 161: Give me your blessing, holy Son of God","publisher":"Foundation for Inner Peace","type":"授权在线原典","url":"https://lessons.acim.org/en/chapters/lesson-161","note":"关于弟兄的观看不只停留在抽象合一。本站相关问题为反思提示，不完整重现该课练习。"},
+    "return-qualities": {"title":"《教师指南》第4节：学习显出的品质","name":"Manual for Teachers, M-4: What Are the Characteristics of God’s Teachers?","publisher":"Miracle Distribution Center / ACIM 原典","type":"原典公开转录","url":"https://www.miraclecenter.org/a-course-in-miracles/M-4.php","note":"介绍信赖等十项品质。本站不据此评分、认证或区分人的高低；仅提供原典继续阅读入口。"},
+    "return-training": {"title":"《教师指南》第16节：训练与一天的生活","name":"Manual for Teachers, M-16: How Should the Teacher of God Spend His Day?","publisher":"Miracle Distribution Center / ACIM 原典","type":"原典公开转录","url":"https://www.miraclecenter.org/a-course-in-miracles/M-16.php","note":"第1段预设其所指教师已学习练习手册。愿意作出选择，不等于已经完成训练或具备带领他人的资格。"}
   },
-  "manifesto": [
-    "生命给了我一套独特的表达，",
-    "但我愿意让这套形式服务于一个并不特殊的目的：",
-    "更少恐惧，更少评判，更少分离，",
-    "更多宽恕，更多给予，更多记起我们其实并没有彼此分开。"
-  ],
+  "manifesto": ["生命给了我一套独特的表达，","但我愿意让这套形式服务于一个并不特殊的目的：","更少恐惧，更少评判，更少分离，","更多宽恕，更多给予，更多记起我们其实并没有彼此分开。"],
+  "foundation": {
+    "title":"先让此刻的自己，有地方安放。",
+    "intro":"热爱可以是入口，疲惫、失去与不确定也可以。无需先把自己修整成一个积极、有方向的人，才有资格开始。这里的安住，不是先完成一层，而是每次探索都能回来的支撑。",
+    "supports":[{"name":"身体","text":"先留意睡眠、饮食、疼痛与负荷。暂停、求助、接受照顾，也可以是负责任的下一步。"},{"name":"感受","text":"承认害怕、羡慕、悲伤和想被认可，不急着把它们命名为失败。看见混合动机，是辨识的起点。"},{"name":"关系","text":"保留他人的同意与拒绝，也保留自己的界限。个人探索不替代共同商议或正式权限。"},{"name":"未知","text":"没有答案时，不必勉强给生命一个解释。先照顾今天能够照顾的事，不把困扰浪漫化为必经考验。"}],
+    "reference":"梅村的正念训练把接纳与照顾痛苦纳入实践；依纳爵传统也区分神慰与单纯的愉快感。它们在各自语境中提醒我们：感觉不是唯一的方向标。上面四项安排是本站的实践设计。",
+    "refs":["return-care","return-discernment"]
+  },
   "lenses": [
-    {
-      "id":"aliveness","name":"认出热爱","glyph":"赴","author":"Joseph Campbell · 约瑟夫·坎贝尔","phrase":"Follow your bliss.","phrase_note":"作者用语；此处译作“追随使生命苏醒的热爱”。",
-      "question":"什么让我愿意真正投入生活？",
-      "intro":"不是先成为一个值得被讲述的英雄，而是承认：确有一些事情，让我不再只是照着别人的安排生活。",
-      "source_text":"坎贝尔所说的 bliss 不只是好玩或刺激。他谈到反复回到某件事的热情，也强调理性、责任与坚持。英雄之旅还包括归来：将所得带回共同生活，而不只停在个人的冒险里。",
-      "refs":["return-bliss","return-hero"],
-      "reading":"在这张地图里，我们把它用作“动机”的入口。先看哪些经验令你愿意投入，再看这种投入能否容纳困难、学习与他人的存在。热爱可以从日常里开始，不必靠辞职、远行或破釜沉舟证明。",
-      "gift":"从麻木和模仿里醒来，认领自己的参与意愿。",
-      "trap":"把兴奋当成召唤，或把受苦当成使命正确的证据。",
-      "correction":"没有强烈热爱也不是失败。可以先寻找一点好奇，或先休息，再做规模很小、能够退出的尝试。",
-      "prompts":["过去一年，我反复回到什么事情上？具体是哪一个时刻？","没有赞美或回报时，我仍愿意学它的哪一部分？","我能怎样试一次，同时不把代价转嫁给别人？"],
-      "field_label":"我认出的热爱线索",
-      "action":"安排一次二十分钟的尝试，记录自己具体愿意投入什么，而不是急着给整个人生定向。"
-    },
-    {
-      "id":"expression","name":"形成表达","glyph":"作","author":"Dan Koe · 丹·科","phrase":"You are the niche.","phrase_note":"作者用语；借用其创作视角，不作为终极身份定义。",
-      "question":"我的经验，可以怎样成为有用的表达？",
-      "intro":"热爱需要找到一种别人能够接触的形式，但形式不必长成一个必须永久维护的个人品牌。",
-      "source_text":"在创作与个人事业的语境里，Dan Koe 把个人经验、价值与目标视为独特视角的来源。他强调把不同兴趣组织成一组连贯作品，而不只是守住一个狭窄类别。",
-      "refs":["return-koe"],
-      "reading":"这里把他的主张向日常应用延伸：把所学整理为一篇文章、一顿饭、一次陪伴或一个小工具。先分清你想帮助谁、对方真正需要什么，以及你目前能负责到哪里。这样的转化是本站设计，不等于他的整套商业方法。",
-      "gift":"让零散兴趣有了联系，让经验成为可以交换、使用与改进的东西。",
-      "trap":"把所有生活都变成素材，用关注度证明价值，或把别人的私密故事当成自己的内容。",
-      "correction":"表达可以收费，也可以不公开；它需要用途、能力与同意。没有商业化的热爱同样可以完整存在。",
-      "prompts":["我走过的哪一段经历，可能对谁有帮助？","对方真正需要的，是我的什么，而不是我想展示什么？","什么是我能交付的小版本，什么又超出了我的能力？"],
-      "field_label":"我愿意做出的小表达",
-      "action":"做出一个对一个人有用的小版本，征询具体反馈，同时说清自己不能提供什么。"
-    },
-    {
-      "id":"fidelity","name":"忠于生命","glyph":"听","author":"Parker J. Palmer · 帕克·帕尔默","phrase":"Let your life speak.","phrase_note":"书名与作者的重要表达；此处强调先聆听，再作安排。",
-      "question":"我在活出生命，还是维护一个形象？",
-      "intro":"当表达开始得到认可，下一次聆听反而可能更困难：有些真实，会要求我修改已经经营得很好的身份。",
-      "source_text":"帕尔默把 vocation 理解为需要聆听的召唤，而不是一项靠意志强行实现的目标。接纳真实自我，不仅包括潜能，也包括限度；一种高尚的生活形象仍可能不是自己的生活。",
-      "refs":["return-palmer"],
-      "reading":"在这张地图里，生命不是一句脑中的声音，而要回到持续的生活材料：身体的承受、工作中的诚实、关系里的反复困难，以及真正能够承担的责任。它们是值得认真看的线索，不是自动替你作决定的神谕。",
-      "gift":"允许真实生活修正身份，承认有所不能并不等于价值不足。",
-      "trap":"把当下情绪都叫作内在指引，或把“忠于自己”当成不必解释后果的理由。",
-      "correction":"聆听与辨识并行。结合时间、事实、可信任的反馈与必要的专业帮助，先作可调整的选择。",
-      "prompts":["为了继续像某种人，我正在忽略哪个反复出现的事实？","哪一种限制需要被承认，而不是被克服给别人看？","什么小调整能让我更诚实，也对受影响的人负责？"],
-      "field_label":"我需要承认的真实与限度",
-      "action":"修改一项不再诚实或无法持续的承诺，并向受影响的人说明，而不是突然消失。"
-    },
-    {
-      "id":"release","name":"松开认同","glyph":"释","author":"A Course in Miracles ·《奇迹课程》","phrase":"你甚至不是那个故事。","phrase_note":"本站的意译性概括，不是《奇迹课程》的逐字引文。",
-      "question":"不拿故事证明自己，我还愿意怎样回应？",
-      "intro":"故事仍有事实、记忆与责任的意义；这里尝试松开的，是让故事决定一个人全部价值的用法。",
-      "source_text":"《奇迹课程》把真正身份置于其关于上主与合一的神学框架中，而不以个人经历或身体为最终定义；它也讨论让身体与行动服务于另一种目的。这与个人品牌或一般心理叙事不是同一个层面。",
-      "refs":["return-self","return-use"],
-      "reading":"接受课程语言的读者，可以把这理解为将经验交给圣灵使用。不使用宗教语言的读者，也可以先问：我是否把“我必须成功”“我永远受害”或“我比别人明白”当成了唯一解释？这只是日常反思入口，并不等价于接受课程的全部神学。",
-      "gift":"让经历继续有用，却不让成功、失败或被需要成为价值的唯一来源。",
-      "trap":"急着宣布“我没有小我”，否定痛苦，强迫宽恕，或以“我是管道”为由取消判断与责任。",
-      "correction":"不否认发生过什么，也不取消保护、问责与身体照顾。可以不报复，同时拒绝伤害；可以暂时还不能宽恕。",
-      "prompts":["我正在用什么故事给自己或别人定终身？","把这个解释放松一点，哪些事实和边界仍必须保留？","不要求对方认同、感激或改变，我愿意做的一小步是什么？"],
-      "field_label":"我愿意松开的认同",
-      "action":"把一个判断改写为“我目前这样解释”，然后作出一项既不贬低别人、也不放弃自己边界的行动。"
-    }
+    {"id":"aliveness","name":"辨认热爱","glyph":"醒","author":"Joseph Campbell · 约瑟夫·坎贝尔","phrase":"Follow your bliss.","phrase_note":"作者用语；热爱不只意味着兴奋，也包括坚持、历练与归来。","question":"什么值得我投入，什么需要我照顾？","intro":"从别人安排的剧本中醒来，不一定需要一场远行。也可能是重新承认一点好奇，或终于愿意照顾被忽略的自己。","source_text":"坎贝尔谈到反复回到某件事的热情，而不是只追逐刺激。他的英雄之旅包括出发、历练与归来，所得需要重新进入人群。它不是一套把人划分高低的心理阶段。","refs":["return-bliss","return-hero"],"reading":"我们在这里借用动机的入口：我实际愿意投入什么，而不只是喜欢成为某种人的想象？热爱和渴望认可可能同时存在，不必等动机纯净才开始；可以先做小尝试，再看它能否容纳困难、反馈与他人的存在。","gift":"认领参与生命的意愿，让好奇成为行动，而不是只靠外界安排。","trap":"把兴奋等同于召唤，或把受苦当成道路正确的证明。","correction":"没有热爱也不是失败。先休息或求助，不把他人承担的成本包装成自己的勇敢。","prompts":["过去一年，我反复回到什么事情上？它具体吸引我的是什么？","赞美与新鲜感退去以后，我仍愿意珍惜和承担什么？","此刻最需要的，是一次小尝试，还是一次真正的照顾？"],"field_label":"我认出的热爱线索","action":"给一件小事二十分钟。记录真实发生的投入与不适，不急着从中宣布终身使命。"},
+    {"id":"fidelity","name":"聆听生命","glyph":"听","author":"Parker J. Palmer · 帕克·帕尔默","phrase":"Let your life speak.","phrase_note":"书名与作者的重要表达；接纳生命，也接纳它的限度。","question":"我在回应生命，还是维护一个形象？","intro":"先聆听，再决定怎样表达；表达以后，再让生活来修正。我们把这一问放在创作之前，不是给作者排序，而是让形式有真实的根。","source_text":"帕尔默把召唤理解为需要聆听的赠予，而非意志替生命订下的高尚目标。接纳真实自我既包括潜能，也包括限制：某种受人赞赏的生活形象，仍可能不适合自己的生命。","refs":["return-palmer"],"reading":"身体的承受、反复出现的困难、他人提出的反馈，都值得纳入聆听。内心很笃定，不等于已经知道全部；真诚的愿望也不能自动免除后果。将聆听放到时间与关系中，让选择有复看的机会。","gift":"允许真实生活修正身份，不再把有所不能看成价值不足。","trap":"把一时情绪叫作指引，以“忠于自己”拒绝沟通后果。","correction":"事实、时间和可信任的反馈都可以参与辨识。需要专业支持时，不用灵性解释替代。","prompts":["什么反复出现的事实，正在要求我修改对自己的想象？","哪一种限制值得被承认，而不是被克服给别人看？","什么调整能让我更诚实，也向受影响的人作出交代？"],"field_label":"我需要承认的真实与限度","action":"安静片刻，先不作决定。写下一个事实、一种感受和一个尚未知道的部分，再考虑可调整的行动。"},
+    {"id":"expression","name":"形成表达","glyph":"作","author":"Dan Koe · 丹·科","phrase":"You are the niche.","phrase_note":"创作与个人事业语境中的表达；不是本体身份，也不是人人必经的灵修关卡。","question":"我的经验，可以怎样成为合宜的给予？","intro":"理解需要一种别人能够接触的形式，但你不必先建立个人品牌，才有值得给予的东西。","source_text":"Dan Koe 讨论个人经历、价值和目标如何形成独特视角，将兴趣组织成连贯的创作与事业。本站采用其中的表达能力，不将其视为通往宗教解脱的阶段。","refs":["return-koe"],"reading":"形式可以是一篇文章、一次陪伴、一顿饭或一个工具。问清对方需要什么，尊重他不需要的部分。表达可以收费，也可以不公开；独特是一种条件，不是优越资格。别人做得更好时，依然能够欢迎，也是一种给予。","gift":"让经验获得可分享、可使用、可反馈的形式。","trap":"把所有生活都变成素材，用影响力证明价值，或觉得自己必须不可替代。","correction":"珍贵的经验可以只属于生活。涉及他人故事先取得同意；不用被需要维持自我价值。","prompts":["谁可能从我的经验中受益？我是否实际听过他的需要？","什么可以做成小版本，什么超出了我的能力与权限？","没有署名或被感谢，我仍愿意给出什么？哪些部分不宜公开？"],"field_label":"我愿意做出的小表达","action":"为一个人做一件具体可用的小事，听取反馈。对方的拒绝不是你的全部价值被否定。"},
+    {"id":"release","name":"松开认同","glyph":"释","author":"本站的综合功课 ·《奇迹课程》另有专页","phrase":"我不是全部由故事定义，你也不是。","phrase_note":"本站的应用性概括，不是《奇迹课程》的逐字引文。","question":"不拿故事定义彼此，还可以怎样回应？","intro":"不仅松开“我是谁”的固定答案，也留意我给别人的故事。别人不必先变成理想的样子，我才有可能不贬低他。","source_text":"《奇迹课程》第95课把身份置于其关于创造与合一的神学中；第161课则从一个具体的弟兄开始训练观看。这不等同于一般心理叙事，也不表示前面的作者都在通向同一个教义。","refs":["return-self","return-brother"],"reading":"在通用入口里，我们先练习不让一段经历穷尽一个人的价值。故事仍有事实、记忆与责任的意义；松开的不是记忆本身，而是用记忆给自己或他人定终身。接受课程语言的读者，可以另入专页，进一步讨论宽恕、救赎与观看的纠正。","gift":"故事可以继续有用，却不必裁定自己与别人的全部价值。","trap":"把“我已超越故事”变成更高级的身份，或用“不执著”绕过痛苦与责任。","correction":"可以认错而不自我定罪，可以不报复而继续保护边界。暂时不能宽恕，也不需要假装。","prompts":["我正在用什么故事，固定自己或眼前这个人？","哪些是可核实的事实，哪些是我加上的整体判断？","不用贬低对方，也不用牺牲自己，我愿意尝试怎样的回应？"],"field_label":"我愿意松开的认同","action":"在想证明或反击时先停一下。把一个判断写成“我目前这样解释”，再决定是否澄清、道歉、拒绝或求助。"}
   ],
+  "integration": {"title":"回到生活，不把归来变成新头衔。","text":"不是完成第四问以后才回到日常。每一问之后，都看看它怎样进入吃饭、工作、费用协商、亲密关系和陌生人的相遇。深刻的解释不替代一个需要履行的承诺。","signs":[{"name":"更能承认","text":"说清哪里不知道、哪里做错了，而不是用理论保全形象。"},{"name":"更能聆听","text":"让别人说完，也允许他不同意，不要求共鸣证明活动成功。"},{"name":"更能承担","text":"愿意调整承诺、道歉或修正安排，不以“放下”代替负责。"},{"name":"更能接受","text":"允许休息、帮助和自己的不完美，不靠被需要领取价值。"}],"note":"这些是本站建议观察的生活线索，不是修行评分表。练习可以往返，错误可以修正；不需要先成为完美的人。"},
   "cases": [
-    {"id":"gathering","title":"一场活动，只有三个人报名","event":"我认真准备了一场共读活动，报名很少，开始怀疑自己做的一切。以下只是本站的假设示范。","views":["认出热爱：除去满场的想象，我仍珍惜哪一种真实相遇？","形成表达：参与者能看懂邀请吗？时间、费用、主题或形式，哪一项值得询问？","忠于生命：我真正适合大场面，还是小组里的细致陪伴？现有成本与精力允许什么？","松开认同：报名少是需要处理的事实，却不必等于“我没有价值”，更不必等于“他们不懂我”。"],"move":"询问已报名者的需要，核算能否如约进行；若调整，清楚沟通或退款。不要为了证明使命而勉强履行，也不要以灵性语言掩盖运营问题。"},
-    {"id":"work","title":"工作很顺，却越来越疲惫","event":"别人觉得我的工作成功，我却想躲开。以下是探索示范，不是辞职建议。","views":["认出热爱：疲惫之中，还有哪一部分工作让我愿意参与？也可能现在最需要的是休息。","形成表达：哪些能力能以更小、更有用的形式交付，而不必维持全能形象？","忠于生命：哪些负荷已超出承受？哪些照顾责任、资源限制与承诺需要如实纳入？","松开认同：不用“成功者”或“失败者”给自己下结论，还剩哪些可以协商的选择？"],"move":"先辨认一项可协商的负荷，讨论调整并观察结果；重大变化需结合生活资源与必要支持，不把一时感受直接当成命令。"},
-    {"id":"criticism","title":"认真表达，却被人误解","event":"我分享了一段看法，收到让我不舒服的评论。以下只适用于可安全讨论的日常情境。","views":["认出热爱：我原来珍惜的议题是什么，是否已被输赢盖住？","形成表达：对方具体误解了哪一句？有什么需要澄清或修正？","忠于生命：我是否为了保持温和形象，不敢说出边界？或者为了显得深刻而故意含糊？","松开认同：可以承认表达不足，而不把对方变成敌人；也可以结束交流，而不必证明自己超脱。"],"move":"只回应一个可核实的问题，承认确有的错误；若出现骚扰或威胁，先保护自己，不把继续对话当成修行要求。"}
-  ]
+    {"id":"gathering","title":"一场活动，只有三个人报名","event":"我准备了一场共读活动，报名很少，开始怀疑自己。以下是本站的假设情境，不是真实个案报告。","views":["辨认热爱：除去满场的想象，我仍珍惜什么？","聆听生命：规模、成本与精力允许什么？小组是否反而适合我？","形成表达：邀请是否清楚？参与者真正需要什么？","松开认同：报名少是需要处理的事实，不必等于我没有价值或别人不懂我。"],"move":"询问已报名者的需要，核算是否能如约进行；若调整，清楚沟通。运营问题需要运营行动，不用使命感遮住它。"},
+    {"id":"work","title":"工作很顺，却越来越疲惫","event":"别人觉得我的工作成功，我却越来越想躲开。以下是探索示范，不是辞职建议。","views":["辨认热爱：仍有什么让我愿意参与？也许眼下先需要休息。","聆听生命：哪一种负荷已持续超出承受？","形成表达：能否缩小交付，保留真正有用的部分？","松开认同：不用成功者或失败者定义自己，还能协商哪些选择？"],"move":"先讨论一项可调整的负荷，观察实际变化。重大决定结合生活资源与必要支持，不把一时感受当命令。"},
+    {"id":"criticism","title":"认真表达，却被人误解","event":"一条评论让我很不舒服。以下只适用于可安全讨论的日常情境。","views":["辨认热爱：原来珍惜的议题，是否已被输赢盖住？","聆听生命：我是否为了显得温和而不敢说边界？","形成表达：对方具体指向哪一句？哪里需要修正？","松开认同：可以承认表达不足，也不必把批评者变成敌人。"],"move":"先回应一个可核实的问题。如果确有错误就修正；出现骚扰或威胁时优先保护，不把继续交流当成修行义务。"}
+  ],
+  "acim": {
+    "title":"同一段人生，重新学习观看。",
+    "intro":"从《教师指南》理解回归：不把上主之师当成最高层的身份，而是在每次相遇中，学习不再用分离的目的看待自己与弟兄。",
+    "sections":[
+      {"id":"beginning","title":"不是走到最后，才可以作出选择。","text":"《教师指南》第一节把上主之师的起点放在一次选择：不把自己的利益与他人的利益看成分离。它也说明，教师可以来自不同宗教，或不属于宗教。\n\n课程在这里使用的是自身关于救恩与共同身份的语言，不是颁发资质。因此，热爱、创作、聆听与放下都能成为课堂；这不意味着坎贝尔、帕尔默或 Dan Koe 只是课程的预备阶段。","refs":["return-teacher"]},
+      {"id":"use","title":"同一种形式，可以服务不同的目的。","text":"第25课区分了一件事的表面功能和内在用途：知道电话能与人联系，并不等于已经明白自己为什么联系他。把这个区别带回生活，就会发现同一项能力既可用于证明，也可用于沟通。\n\n办活动时想被认可，关心别人时也想被需要，都值得诚实看见。我们不必因此宣布自己虚伪，也不必急着证明动机纯净。下面的图解是本站对这种用途转向的示范。","refs":["return-purpose"],"diagram":"purpose"},
+      {"id":"correction","title":"先让我的观看被纠正，而非要求你改变。","text":"《教师指南》第18节把教师的责任带回接受自身错误的纠正。它以 Atonement 说明救赎或更正，并非由一个更高明的我修理别人。\n\n当参加者说“我没有收获”，可以先观察：我是否要求他的改变来确认自己的价值？这个问题不会取代课程对错觉、真实与救恩的完整教导，却能成为愿意回头的入口。","refs":["return-correction"]},
+      {"id":"brother","title":"你也不是，我给你的那个故事。","text":"如果我愿意相信自己不限于过去，却一直把别人看作自私、落后或不值得理解的人，那么关于自己的自由仍被比较支撑。\n\n第161课将练习带向一个具体的人，而非只谈抽象的一体。在课程语境里，“弟兄”指共同身份中的他人，不仅是熟悉、喜欢或信仰相同的人。这里尝试撤回的是终极定罪，不是调查事实或保护边界的能力。","refs":["return-brother"]},
+      {"id":"forgiveness","title":"宽恕不是赦免一个本质上有罪的人。","text":"第134课把宽恕放在课程关于真实、错觉与罪咎的神学中：不是先认定罪咎是人的真实本质，再由高尚的我决定赦免。它要更正的，是这类定罪本身。\n\n这比一般的情绪释怀更激进，不能简化成积极思考。与此同时，本站明确区分原典的形上主张与现实应用：不据此宣称伤害未曾发生，不要求受伤者继续接触施害者，也不把放弃保护或追责当成宽恕的证明。","refs":["return-forgive"]},
+      {"id":"guidance","title":"愿意接受引导，也愿意承认自己会看错。","text":"第10节指出，完全公正的判断需要知道全部影响，个体并不拥有这种全知。课程由此谈放下个人判断、接受圣灵引导，而不只是改进分析技术。\n\n本站的应用边界是：内心的笃定不自动证明神圣授权。越使用指引语言，越应容许核实、反馈、拒绝与修正。“上主让我做的”不能让别人失去说不的权利。","refs":["return-judgment"]},
+      {"id":"receiving","title":"愿意给予的人，也愿意先接受。","text":"第154课同时反对傲慢和虚假的谦卑，并说明传递讯息的人首先也是讯息的接受者。它不要求人在特别与卑微之间选择一种自我形象。\n\n在本站的应用里，谈聆听的人也需要听取提醒；给予宽容的人也允许自己不完美。与此同时，第9节并未规定每个人都需离职、迁居或建立事业。改变用途，不必采用同一种生活形式。","refs":["return-receive","return-life"]},
+      {"id":"again","title":"看见错误之后，不再追加自我定罪。","text":"第95课第7—9段特别提醒，遗漏练习之后可以回来，不必把一天判为失败。需要的是纠正，不是再以惩罚巩固失误。\n\n“我刚才急着解释，没有听完。对不起，你愿意继续说吗？”这句话是本站的生活示范：既承认行为，也不把自己定成失败者。返回不是纵容，而是让修正有可能发生。","refs":["return-self"]}
+    ],
+    "practice":[{"name":"看见用途","question":"我正在要求这件事，证明我或别人是什么？"},{"name":"看见分离","question":"我把谁看成障碍、敌人、低于我的人，或必须满足我的人？"},{"name":"愿意再看","question":"我愿意承认目前的解释并不完整，接受纠正吗？"},{"name":"选择回应","question":"不攻击别人，也不牺牲自己，我现在可以诚实地做什么？"}],
+    "situations":[
+      {"title":"对方说，这场活动没有帮助","fact":"有人明确反馈：没有获得他期待的帮助。","story":"他不懂，我做的一切都白费了。","opening":"我能询问哪里没有回应需要，同时不要求他改变感受来安慰我。","action":"听完反馈，说明能够调整与不能承诺的部分，不以灵性深浅评价对方。"},
+      {"title":"我又一次打断了别人","fact":"对方尚未说完，我已经开始解释。","story":"我根本不配带领，也不配谈聆听。","opening":"这是一个需要修正的行为，不是全部身份的判决。","action":"承认打断、道歉，把说话的机会还给他，再检查下次怎样提醒自己。"},
+      {"title":"我需要休息，却担心不够奉献","fact":"现有精力无法继续履行某项承诺。","story":"别人需要我，我就没有资格停下。","opening":"给予也可以包括接受支持，不需要用耗尽自己证明爱。","action":"说明限制，协商交接或调整；不能拿信仰替别人承诺无限供应。"}
+    ]
+  }
 }

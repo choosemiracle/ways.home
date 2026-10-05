@@ -8,6 +8,11 @@
   const result = document.getElementById('my-card');
   const content = document.getElementById('return-card-content');
   const storageKey = 'ways.home.returning.v1';
+  // An explicit link can select the prompt language, never load private notes.
+  const requestedLanguage = new URLSearchParams(location.search).get('language');
+  if (requestedLanguage === 'acim' || requestedLanguage === 'everyday') {
+    form.querySelector(`[name="language"][value="${requestedLanguage}"]`).checked = true;
+  }
   const languageName = value => value === 'acim' ? '《奇迹课程》语言' : '日常语言';
   const language = () => form.querySelector('[name="language"]:checked').value;
   const snapshot = () => ({ version: 1, language: language(), fields: Object.fromEntries(fields.map(f => [f.name, f.value])) });
