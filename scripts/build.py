@@ -15,11 +15,14 @@ from pathlib import Path
 from xml.sax.saxutils import escape as xml_escape
 from enrichment import RichContent
 from typography import TitleTypography
+import returning
 
 ROOT = Path(__file__).resolve().parents[1]
 BASE_URL = "https://choosemiracle.github.io/ways.home/"
 SOURCES = json.loads((ROOT / "content/sources.json").read_text(encoding="utf-8"))
 SOURCES.update(json.loads((ROOT / "content/sources-extra.json").read_text(encoding="utf-8")))
+RETURNING = json.loads((ROOT / "content/returning.json").read_text(encoding="utf-8"))
+SOURCES.update(RETURNING['sources'])
 ROADS = json.loads((ROOT / "content/atlas.json").read_text(encoding="utf-8"))
 CHAPTERS = json.loads((ROOT / "content/chapters.json").read_text(encoding="utf-8"))
 DEPTH = json.loads((ROOT / "content/depth.json").read_text(encoding="utf-8"))
@@ -33,7 +36,7 @@ LENSES = {q["id"]: q for q in CHAPTERS["questions"]}
 PAGES: list[dict] = []
 TYPOGRAPHY = TitleTypography(ROOT)
 TYPOGRAPHY.build_runtime()
-VERSION = hashlib.sha256(b"".join((ROOT / f).read_bytes() for f in ("styles.css", "app.js", "assets/enrich.css", "assets/enrich.js", "assets/heading-layout.css", "assets/heading-layout.js"))).hexdigest()[:10]
+VERSION = hashlib.sha256(b"".join((ROOT / f).read_bytes() for f in ("styles.css", "app.js", "assets/enrich.css", "assets/enrich.js", "assets/heading-layout.css", "assets/heading-layout.js", "assets/returning.css", "assets/returning.js"))).hexdigest()[:10]
 
 
 def esc(value: object) -> str:
@@ -128,18 +131,19 @@ def landscape() -> str:
 
 def page(path: str, title: str, description: str, body: str, active: str = "", kind: str = "专题") -> None:
     pre = '/ways.home/' if path == '404.html' else prefix(path)
-    nav_items = [("index.html", "起点", "home"), ("atlas.html", "探索图谱", "atlas"), ("studies.html", "深读", "studies"), ("encounters.html", "文明交汇", "encounters"), ("unity.html", "合一诸义", "unity"), ("media.html", "视听", "media"), ("practice.html", "回到日常", "practice")]
+    nav_items = [("index.html", "起点", "home"), ("atlas.html", "探索图谱", "atlas"), ("studies.html", "深读", "studies"), ("encounters.html", "文明交汇", "encounters"), ("unity.html", "合一诸义", "unity"), ("media.html", "视听", "media"), ("returning.html", "回归之路", "returning"), ("practice.html", "回到日常", "practice")]
     nav = "".join(f'<a href="{pre}{url}"{ " aria-current=\"page\"" if key == active else ""}>{label}</a>' for url, label, key in nav_items)
+    returning_script = f'<script src="{pre}assets/returning.js?v={VERSION}" defer></script>' if path == 'returning/explore.html' else ''
     doc = f'''<!doctype html>
 <html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#f4f0e7">
 <title>{esc(title)} · 同归 WAYS HOME</title><meta name="description" content="{esc(description)}"><link rel="canonical" href="{BASE_URL}{path}">
 <meta property="og:title" content="{esc(title)} · 同归"><meta property="og:description" content="{esc(description)}"><meta property="og:type" content="website"><meta property="og:url" content="{BASE_URL}{path}">
-<link rel="icon" href="{pre}assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="{pre}styles.css?v={VERSION}"><link rel="stylesheet" href="{pre}assets/enrich.css?v={VERSION}"><link rel="stylesheet" href="{pre}assets/heading-layout.css?v={VERSION}"><script>document.documentElement.classList.add('js');</script><script src="{pre}app.js?v={VERSION}" defer></script><script src="{pre}assets/enrich.js?v={VERSION}" defer></script><script src="{pre}assets/heading-layout.js?v={VERSION}" defer></script></head>
+<link rel="icon" href="{pre}assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="{pre}styles.css?v={VERSION}"><link rel="stylesheet" href="{pre}assets/enrich.css?v={VERSION}"><link rel="stylesheet" href="{pre}assets/returning.css?v={VERSION}"><link rel="stylesheet" href="{pre}assets/heading-layout.css?v={VERSION}"><script>document.documentElement.classList.add('js');</script><script src="{pre}app.js?v={VERSION}" defer></script><script src="{pre}assets/enrich.js?v={VERSION}" defer></script><script src="{pre}assets/heading-layout.js?v={VERSION}" defer></script>{returning_script}</head>
 <body data-base="{pre}" data-page="{esc(path)}"><a class="skip-link" href="#main">跳到正文</a>
 <header class="site-header"><div class="shell header-inner"><a class="brand" href="{pre}index.html" aria-label="同归首页"><span class="brand-seal" aria-hidden="true">归</span><span><b>同归</b><small>WAYS HOME</small></span></a>
 <nav class="primary-nav" id="primary-nav" aria-label="主导航">{nav}</nav><div class="header-actions"><button class="icon-button js-only" data-search-open aria-label="搜索全站"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10" cy="10" r="6.5"/><path d="m15 15 6 6"/></svg><span>搜索</span></button><button class="menu-button js-only" aria-expanded="false" aria-controls="primary-nav">目录</button></div></div></header>
 <div class="reading-progress" aria-hidden="true"><span></span></div><main id="main">{body}</main>
-<div class="shell end-nav"><a href="{pre}essay.html">关于同归</a><a href="{pre}sources.html">来源与边界</a><a href="{pre}studies.html">深读专题</a><a href="{pre}media.html">图像与视听</a><a href="{pre}applications.html">应用工坊</a><a href="#main" class="back-top">回到页首 ↑</a></div>
+<div class="shell end-nav"><a href="{pre}essay.html">关于同归</a><a href="{pre}sources.html">来源与边界</a><a href="{pre}studies.html">深读专题</a><a href="{pre}media.html">图像与视听</a><a href="{pre}returning.html">回归之路</a><a href="{pre}applications.html">应用工坊</a><a href="#main" class="back-top">回到页首 ↑</a></div>
 <footer class="site-footer"><blockquote>天下同归而殊涂，一致而百虑。</blockquote><p>《周易 · 系辞下》</p></footer>
 <dialog class="search-dialog" id="search-dialog" aria-labelledby="search-title"><div class="dialog-head"><h2 id="search-title">在图谱中寻找</h2><button class="icon-button" data-search-close aria-label="关闭搜索">关闭 ×</button></div><label for="site-search" class="small">输入问题、传统或方法，例如“无我”“艺术”“边界”</label><input id="site-search" type="search" placeholder="你正在寻找什么？" autocomplete="off"><p class="small muted" id="search-status" role="status">搜索本站文章与来源，不查询外部网站。</p><div id="search-results" class="search-results"></div><p class="small muted search-tip">⌘ / Ctrl + K 打开搜索 · Esc 返回阅读</p></dialog>
 {RICH.lightbox_dialog()}
@@ -162,7 +166,7 @@ def build_home() -> None:
 <section class="encounter-band"><div class="shell section"><div class="split-heading">{heading('03 / 文明交汇', '世界思想，<br>从来不止一个中心。', '从具体的文本、地点和知识实践进入；不把历史画成一条文明等级的阶梯。')}{link('encounters.html','沿十二个历史切面阅读')}</div><div class="encounter-preview"><a href="encounters.html#silk"><span class="eyebrow">欧亚交流</span><h3>思想也走过<br>海陆之间的路。</h3><p>知识在迁移与翻译中，获得新的解释。</p><span aria-hidden="true">↗</span></a><a href="encounters.html#timbuktu"><span class="eyebrow">西非 · 廷巴克图</span><h3>把另一座<br>知识之城放进地图。</h3><p>学习、文本与精神生活彼此交织。</p><span aria-hidden="true">↗</span></a><a href="encounters.html#living"><span class="eyebrow">美洲原住民</span><h3>活着的文化，<br>仍在表达自己。</h3><p>从当代的艺术、教育与生活听起。</p><span aria-hidden="true">↗</span></a></div><p class="small muted">历史入口的依据：{refs(['silk','timbuktu','native'])}</p></div></section>
 <section class="shell section unity-teaser"><div class="large-glyph" aria-hidden="true">辨</div><div>{heading('04 / 合一诸义', '同一个词，<br>可能在说不同的事情。', '关系中的和谐、人格的整合、理论的统一与宗教中的不二，不在同一个层面。先辨明差别，再谈彼此照亮。')}{local_button('unity.html','选择两个入口并读',True)}</div></section>
 <section class="shell practice-invitation"><div><span class="eyebrow">05 / 回到日常</span><h2>读过之后，<br>让一个小动作发生。</h2><p>辨认一次判断，听完一个人，或在一件作品前多停留三分钟。</p></div><div class="practice-invitation-links"><a href="practice.html#pause"><span>一分钟</span>先停一下 <b>→</b></a><a href="practice.html#look"><span>三分钟</span>重新观看 <b>→</b></a><a href="practice.html#listen"><span>六分钟</span>轮流聆听 <b>→</b></a></div></section>'''
-    body = body.replace('<section class="shell section route-index">', RICH.home_feature()+'<section class="shell section route-index">')
+    body = body.replace('<section class="shell section route-index">', RICH.home_feature()+returning.home_entry()+'<section class="shell section route-index">')
     body = body.replace('沿十二个历史切面阅读','沿十五个历史切面阅读')
     page('index.html','人类探索的开放图谱','从真、善、美、归出发，阅读探索道路、深度论述与图像视频，再把问题带回日常实践。',body,'home','起点')
 
@@ -235,6 +239,7 @@ def build_practice() -> None:
         body += f'''<article class="practice-card" id="{p['id']}"><div class="road-top"><p class="eyebrow">{esc(p['label'])}</p><span class="small-glyph" aria-hidden="true">{p['char']}</span></div><h2>{esc(p['title'])}</h2><p>{esc(p['text'])}</p><ol>{''.join(f'<li>{esc(s)}</li>' for s in p['steps'])}</ol><p class="practice-prompt">{esc(p['prompt'])}</p><button class="button js-only" data-practice="{p['id']}" data-duration="{p['duration']}" data-title="{esc(p['title'])}" data-prompt="{esc(p['prompt'])}">打开计时与书写 →</button><p class="no-js-note small muted">关闭脚本时，可以自行计时，照着上面的步骤进行。</p></article>'''
     body += '''</div></section><dialog class="practice-dialog" id="practice-dialog" aria-labelledby="practice-title"><div class="dialog-head"><span class="eyebrow">留一段时间给此刻</span><button class="icon-button" id="practice-close">结束并返回 ×</button></div><h2 id="practice-title">先留一分钟</h2><p id="practice-question"></p><div class="timer-face" id="timer-face" aria-hidden="true">01:00</div><p id="timer-status" class="small" role="status">准备好了，再开始。</p><div class="timer-actions"><button class="button primary" id="timer-toggle">开始</button><button class="text-button" id="timer-reset">重新计时</button></div><div class="notes-area"><label for="practice-note">留下一点自己的记录</label><textarea id="practice-note" rows="4" placeholder="可以只写一句，也可以保持空白。"></textarea><p class="small muted">不会自动保存。点击保存后，只写入当前浏览器的网站存储，不上传；共享设备请谨慎使用，清理浏览器数据会丢失记录。</p><div class="note-actions"><button class="text-button" id="note-save">保存在此浏览器</button><button class="text-button" id="note-export">导出文字</button><button class="text-button" id="note-clear">清除此项记录</button></div><p id="note-status" class="small muted" role="status"></p></div></dialog>'''
     body+=RICH.applications_link()
+    body+=returning.home_entry()
     page('practice.html','回到日常','六种自愿、低强度的观察、聆听与书写练习，以及通往应用工坊的入口。',body,'practice','实践')
 
 
@@ -272,6 +277,7 @@ def validate_content() -> None:
                 walk(item)
     walk(ROADS)
     walk(CHAPTERS)
+    walk(RETURNING)
     if len(ROAD_BY_ID) != len(ROADS):
         raise ValueError('Duplicate road ids')
     for r in ROADS:
@@ -292,6 +298,7 @@ def main() -> None:
     build_essay()
     build_sources()
     RICH.build_all(sys.modules[__name__])
+    returning.build(sys.modules[__name__], RETURNING)
     search_pages = list(PAGES)
     (ROOT / 'assets/search-index.json').write_text(json.dumps(search_pages, ensure_ascii=False), encoding='utf-8')
     page('404.html','这里暂时没有这条路径','返回同归，重新选择一个入口。',page_hero('404 / 未找到页面','不妨换一条路。','这个地址没有对应页面，内容可能已经移动。','归',pre='/ways.home/')+'<div class="shell section"><a class="button primary" href="/ways.home/index.html">回到同归首页 →</a></div>')

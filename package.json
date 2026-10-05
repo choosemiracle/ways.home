@@ -5,7 +5,7 @@
   "description": "Tonggui: an open atlas of human inquiry",
   "scripts": {
     "build": "python3 scripts/build.py",
-    "check": "node --check app.js && node --check assets/enrich.js && node --check assets/heading-layout.js && python3 scripts/check.py && python3 scripts/audit_headings.py --check",
+    "check": "node --check app.js && node --check assets/enrich.js && node --check assets/heading-layout.js && node --check assets/returning.js && python3 scripts/check.py && python3 scripts/audit_headings.py --check",
     "test": "playwright test",
     "preview": "python3 scripts/serve.py --port 8785"
   },

@@ -148,7 +148,8 @@ test('expanded encounters and comparisons keep old entries and add new perspecti
   await page.locator('#compare-right').selectOption('monist');
   await expect(page.locator('#compare-b')).toContainText('何种意义');
   await page.goto('sources.html');
-  await expect(page.locator('[data-source]')).toHaveCount(37);
+  const newSources = JSON.parse(fs.readFileSync('content/returning.json','utf8')).sources;
+  await expect(page.locator('[data-source]')).toHaveCount(37 + Object.keys(newSources).length);
 });
 
 test('media and applications remain readable without JavaScript', async ({ browser }) => {
